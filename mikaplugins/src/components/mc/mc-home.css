@@ -1,0 +1,18 @@
+.title, .light-title, .dark-title {
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 1%;
+  padding: 2%;
+}
+
+.dark-title {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.light-title {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(54, 54, 54);
+}
+
+/*# sourceMappingURL=mc-home.css.map */
