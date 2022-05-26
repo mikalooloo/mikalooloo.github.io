@@ -3,16 +3,10 @@
     "id": 0,
     "name": "Mika's Directional",
     "version": "v1.0",
+    "border": "warning",
     "thumbnail": "0-v1.0.png",
+    "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar", 
     "desc": "Mika's Directional adds a customizable action bar that includes your coordinates and facing direction!",
     "updateDate": "May 15, 2022"
-  },
-  {
-    "id": 1,
-    "name": "Test",
-    "version": "v2.4",
-    "thumbanil": "logo192.png",
-    "desc": "testing desc!",
-    "updateDate": "May 29, 2022"
   }
 ]
