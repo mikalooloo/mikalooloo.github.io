@@ -6,7 +6,17 @@
     "border": "warning",
     "thumbnail": "0-v1.0.png",
     "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar", 
-    "desc": "Mika's Directional adds a customizable action bar that includes your coordinates and facing direction!",
+    "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
     "updateDate": "May 15, 2022"
+  },
+  {
+    "id": 1,
+    "name": "Mika's Name Everything",
+    "version": "v1.0",
+    "border": "danger",
+    "thumbnail": "",
+    "alt": "No image",
+    "desc": "Adds the ability to craft nametags and customize experience usage!",
+    "updateDate": "June 14, 2022"
   }
 ]
