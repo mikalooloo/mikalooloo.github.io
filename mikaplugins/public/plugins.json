@@ -6,5 +6,13 @@
     "thumbnail": "0-v1.0.png",
     "desc": "Mika's Directional adds a customizable action bar that includes your coordinates and facing direction!",
     "updateDate": "May 15, 2022"
+  },
+  {
+    "id": 1,
+    "name": "Test",
+    "version": "v2.4",
+    "thumbanil": "logo192.png",
+    "desc": "testing desc!",
+    "updateDate": "May 29, 2022"
   }
 ]
