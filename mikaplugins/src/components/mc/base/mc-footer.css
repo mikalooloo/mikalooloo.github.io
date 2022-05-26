@@ -4850,20 +4850,20 @@
   }
 }
 .dark-footer, .dark-footer-body {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  bottom: 0%;
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .dark-footer-border {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 .light-footer, .light-footer-body {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  bottom: 0%;
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .light-footer-border {
   background-color: rgba(0, 0, 0, 0.05);

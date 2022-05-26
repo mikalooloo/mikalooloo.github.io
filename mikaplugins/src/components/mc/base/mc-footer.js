@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../theme';
+import { ThemeContext } from '../../theme';
 
 export default function MCFooter(props) {
   const theme = useContext(ThemeContext);

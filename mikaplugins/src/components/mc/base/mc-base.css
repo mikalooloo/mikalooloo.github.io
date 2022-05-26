@@ -1,0 +1,17 @@
+.title, .light-title, .dark-title {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding: 2%;
+}
+
+.dark-title {
+  background-color: rgb(29, 33, 36);
+  color: white;
+}
+
+.light-title {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgb(54, 54, 54);
+}
+
+/*# sourceMappingURL=mc-base.css.map */
