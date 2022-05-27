@@ -8,8 +8,10 @@
     "thumbnail": "0-v1.0.png",
     "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar", 
     "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
-    "overview": "Mika's Directional is a Minecraft plugin that adds a customizable action bar that includes your coordinates and facing direction. Customizations include<ul><li>Enabling or disabling the coordinates/facing direction</li><li>Changing the color of the labels/values</li><li>Optional permissions to customize/reload the config​</li></ul>",
-    "updateDate": "May 15, 2022"
+    "overview": "Never get lost again! <b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! This action bar appears upon movement and disappears after no movement over a short period of time.",
+    "featuresTitle": "Customizations include:",
+    "features": "<br /><img src=\"feather-icon.png\" alt=\"(feather icon)\" /> Enabling or disabling the coordinates and/or facing direction<br /><img src=\"feather-icon.png\" alt=\"(feather icon)\" /> Changing the color of the labels and values<br /><img src=\"feather-icon.png\" alt=\"(feather icon)\" /> Changing server-wide defaults for both of the above<br /><img src=\"feather-icon.png\" alt=\"(feather icon)\" /> Optional permissions to restrict customization via in-game commands and who can reload the config in-game​",
+    "updateDate": "May 14, 2022"
   },
   {
     "id": 1,
@@ -18,8 +20,11 @@
     "minecraft": "1.18",
     "border": "danger",
     "thumbnail": "",
-    "alt": "No image",
+    "alt": "no image yet",
     "desc": "Adds the ability to craft nametags and customize experience usage!",
+    "overview": "",
+    "featuresTitle": "",
+    "features": "",
     "updateDate": "June 14, 2022"
   }
 ]
