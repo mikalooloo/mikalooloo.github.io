@@ -32,9 +32,8 @@ root.render(
           <Route index element={<RLHome />} />
           <Route path="minecraft" element={<MCBase />}>
             <Route index element={<MCHome />} />
-            <Route path="plugins" element={<MCPlugins />}>
-              <Route path=":pluginID" element={<MCPlugin />} /> 
-            </Route>
+            <Route path="plugins" element={<MCPlugins />} />
+            <Route path="plugins/:pluginID" element={<MCPlugin />} />
           </Route>
         </Route>
       </Routes>

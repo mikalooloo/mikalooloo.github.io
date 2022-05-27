@@ -27,11 +27,11 @@ export default function MCBase(props) {
 
   return (
     <div className={darkMode ? "text-white" : "text-dark"}>
-      <div style={{"min-height":"80vh"}}>
+      <div style={{"minHeight":"80vh"}}>
         <style>{darkMode ? "body { background-color: rgb(36, 40, 45); }" : "body { background-color: rgba(0, 0, 0, 0); }"}</style>
         <h1 className={darkMode ? "dark-title" : "light-title"}>Mika's Minecraft</h1>
         <MCNavbar stick={sticky}/>
-        <div style={sticky === "sticky-top" ? {"padding-top":"1.5%", "padding-bottom":"2%"} : {"padding-top":"5%", "padding-bottom":"2%"}}>
+        <div style={sticky === "sticky-top" ? {"paddingTop":"1.5%", "paddingBottom":"2%"} : {"paddingTop":"5%", "paddingBottom":"2%"}}>
           <Sentry.ErrorBoundary fallback={<ErrorPopup />}>
             <Outlet />
           </Sentry.ErrorBoundary>

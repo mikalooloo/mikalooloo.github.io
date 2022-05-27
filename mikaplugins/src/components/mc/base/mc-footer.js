@@ -2,7 +2,7 @@ import './mc-footer.css';
 import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../theme';
 
 export default function MCFooter(props) {
@@ -17,15 +17,15 @@ export default function MCFooter(props) {
   return (
     <footer className={darkMode ? "dark-footer-body" : "light-footer-body"}>
       <section className={darkMode ? "dark-footer-border" : "light-footer-border"}>ㅤ</section>
-      <Container style={{'margin-top': '1%', 'margin-bottom': '1%'}}>
-        <Row style={{'font-weight':'bold'}}>
+      <Container className="footer-text" style={{'marginTop': '1%', 'marginBottom': '1%'}}>
+        <Row style={{'fontWeight':'bold'}}>
           <Col>Popular Plugins</Col>
           <Col>Help</Col>
           <Col>Support</Col>
           <Col>Other</Col>
         </Row>
         <Row>
-          <Col>Mika's Directional</Col>
+          <Col><Link to="/minecraft/plugins/0">Mika's Directional</Link></Col>
           <Col>Report a Bug</Col>
           <Col>Send a Compliment</Col>
           <Col><span onClick={handleToggle} style={{'cursor':'pointer'}}>{darkMode ? "Light Mode" : "Dark Mode"}</span></Col>

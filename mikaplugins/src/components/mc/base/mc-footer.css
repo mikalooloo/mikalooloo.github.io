@@ -4869,5 +4869,9 @@
   background-color: rgba(0, 0, 0, 0.05);
   text-align: center;
 }
+.footer-text a {
+  color: rgb(107, 112, 113);
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=mc-footer.css.map */
