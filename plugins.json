@@ -3,6 +3,7 @@
     "id": 0,
     "name": "Mika's Directional",
     "version": "v1.0",
+    "updateDate": "May 14, 2022",
     "minecraft": "1.18",
     "border": "warning",
     "thumbnail": "0-v1.0.png",
@@ -10,8 +11,22 @@
     "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
     "overview": "Never get lost again! <b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! The action bar appears upon movement and fades away after a few seconds of no movement.",
     "featuresTitle": "Customizations include:",
-    "features": "<ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>Optional permissions to restrict customization via in-game commands and who can reload the config in-game</li></ul>​",
-    "updateDate": "May 14, 2022",
+    "features": "<ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict customization via in-game commands and who can reload the config in-game</li></ul>​",
+    "howToUse": [
+      {
+        "title": "commands", 
+        "body": "To <u>view the commands</u> available to you, use:<br /><blockquote>/md</blockquote><br />To <u>enable or disable a feature</u>, use:<br /><blockquote>/md toggle [coords/direction/both]</blockquote><br />To <u>change the color</u> of the labels or the values, use:<br /><blockquote>/md setColor [labels/values] [named color/hex code]</blockquote><br />To <u>reload the config</u>*, use:<br /><blockquote>/md reload</blockquote><br />*Only opped players may use by default", 
+        "image": "0-v1.0-commands.png"
+      },
+      {
+        "title": "config", 
+        "body": "Defaults for your players can be set using the config file."
+      },
+      {
+        "title": "permissions", 
+        "body": "By default, all players may customize the appearance of their action bar through /md toggle and /md setColor.<br /><br />However, this can be changed by altering the config:<br /><blockquote>NeedUserPerms: <s>false</s> true</blockquote><br />Then, players will need the <u>MikaDirectional.User</u> permission to use /md, /md toggle, and /md setColor.<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />By default, only opped playeres may reload the config through /md reload.<br /><br />However, this can be changed by altering the config:<br /><blockquote>NeedReloadPerms: <s>true</s> false</blockquote><br />Then, players will no longer need to be opped or have the <u>MikaDirectional.Reload</u> permission to use /md reload."
+      }
+    ],
     "spigotLink": "https://www.spigotmc.org/resources/mikas-directional-onscreen-coords-direction.102009/"
   },
   {
