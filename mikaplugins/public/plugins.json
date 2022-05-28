@@ -20,8 +20,7 @@
       },
       {
         "title": "config", 
-        "body": "Defaults for your players can be set using the config file.",
-        "toggleAccordion": { "title": "Generated Config File", "body": "To view the generated config file, go <a href=\"https://github.com/mikalooloo/MikaDirectional/blob/master/src/main/resources/config.yml\" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>." }
+        "body": "Defaults for your players can be set using the config file."
       },
       {
         "title": "permissions", 
