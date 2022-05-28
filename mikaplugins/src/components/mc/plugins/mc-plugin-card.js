@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import Card from "react-bootstrap/Card";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ThemeContext } from '../../theme';
+// bootstrap
+import Card from "react-bootstrap/Card";
 
 export default function MCPluginCard(props) {
   const plugin = props.plugin;
@@ -10,7 +11,7 @@ export default function MCPluginCard(props) {
   const darkMode = theme.state.darkMode;
 
   return (
-    <Link to={"/minecraft/plugins/" + plugin.id}>
+    <Link to={"/minecraft/plugins/" + plugin.id} style={{"textDecoration":"none"}}>
       <Card bg={darkMode ? "dark" : "light"} text={darkMode ? "white" : "black"} border={plugin.border} style={{ cursor: "pointer" }}>
         <Card.Img variant="top" src={plugin.thumbnail} alt={plugin.alt}/>
         <Card.Body>

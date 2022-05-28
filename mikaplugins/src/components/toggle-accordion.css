@@ -1,0 +1,76 @@
+.toggleCard, .toggleCard-light-spoilerButton, .toggleCard-light-silentButton, .toggleCard-dark-spoilerButton, .toggleCard-dark-silentButton {
+  width: 18rem;
+  margin: 0 auto;
+}
+.toggleCard-dark-silentButton {
+  background-color: #212528;
+}
+.toggleCard-dark-spoilerButton {
+  background-color: #424242;
+}
+.toggleCard-light-silentButton {
+  background-color: rgb(255, 255, 255);
+  border: rgb(252, 252, 252);
+}
+.toggleCard-light-spoilerButton {
+  background-color: rgb(231, 231, 231);
+  border: rgb(252, 252, 252);
+}
+
+.spoilerButton-dark, .spoilerButton-dark:active:focus, .spoilerButton-dark:active, .spoilerButton-dark:hover, .spoilerButton-dark:focus {
+  background-color: rgb(109, 109, 109);
+  border: gray;
+}
+.spoilerButton-dark:focus {
+  box-shadow: 0 0 5px 1px gray;
+}
+.spoilerButton-dark:hover, .spoilerButton-dark:hover:active:focus {
+  box-shadow: 0 0 10px 1px gray;
+}
+.spoilerButton-dark:active, .spoilerButton-dark:active:focus {
+  box-shadow: 0 0 10px 1px gray;
+}
+.spoilerButton-light, .spoilerButton-light:active:focus, .spoilerButton-light:active, .spoilerButton-light:hover, .spoilerButton-light:focus {
+  background-color: rgb(240, 240, 240);
+  color: rgb(68, 68, 68);
+  border: gray;
+}
+.spoilerButton-light:focus {
+  box-shadow: 0 0 5px 1px gray;
+}
+.spoilerButton-light:hover, .spoilerButton-light:hover:active:focus {
+  box-shadow: 0 0 10px 1px gray;
+}
+.spoilerButton-light:active, .spoilerButton-light:active:focus {
+  box-shadow: 0 0 10px 1px gray;
+}
+.silentButton-dark, .silentButton-dark:active:focus, .silentButton-dark:active, .silentButton-dark:hover, .silentButton-dark:focus {
+  background-color: rgb(47, 49, 53);
+  color: rgb(197, 197, 197);
+  border: gray;
+}
+.silentButton-dark:focus {
+  box-shadow: 0 0 5px 1px rgb(75, 75, 75);
+}
+.silentButton-dark:hover, .silentButton-dark:hover:active:focus {
+  box-shadow: 0 0 10px 1px rgb(75, 75, 75);
+}
+.silentButton-dark:active, .silentButton-dark:active:focus {
+  box-shadow: 0 0 10px 1px rgb(75, 75, 75);
+}
+.silentButton-light, .silentButton-light:active:focus, .silentButton-light:active, .silentButton-light:hover, .silentButton-light:focus {
+  background-color: rgb(235, 235, 235);
+  color: rgb(68, 68, 68);
+  border: rgb(175, 175, 175);
+}
+.silentButton-light:focus {
+  box-shadow: 0 0 5px 1px rgb(197, 197, 197);
+}
+.silentButton-light:hover, .silentButton-light:hover:active:focus {
+  box-shadow: 0 0 10px 1px rgb(197, 197, 197);
+}
+.silentButton-light:active, .silentButton-light:active:focus {
+  box-shadow: 0 0 10px 1px rgb(197, 197, 197);
+}
+
+/*# sourceMappingURL=toggle-accordion.css.map */

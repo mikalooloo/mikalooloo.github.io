@@ -12,6 +12,7 @@ export default function MCNavbar(props) {
   return (
     <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} expand="lg" className={props.stick} style={{'paddingTop':'0.5%', 'paddingBottom':'0.5%'}}>
       <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={{"paddingLeft":"39%", "paddingRight":"39%"}}>
             <Nav.Link as={NavLink} to="/minecraft" end>Home <span className="visually-hidden">(current)</span></Nav.Link>
