@@ -15,7 +15,7 @@
     "howToUse": [
       {
         "title": "<div>commands</div>", 
-        "body": "<div>To <u>view the commands</u> available to you, use:<br /><blockquote>/md</blockquote><br />To <u>enable or disable a feature</u>, use:<br /><blockquote>/md toggle [coords/direction/both]</blockquote><br />To <u>change the color</u> of the labels or the values, use:<br /><blockquote>/md setColor [labels/values] [named color/hex code]</blockquote><br />To <u>reload the config</u>*, use:<br /><blockquote>/md reload</blockquote><br />*Only opped players may use by default</div>", 
+        "body": "<div>To <u>view the commands</u> available to you, use:<br><br/><blockquote>/md</blockquote><br><br/>To <u>enable or disable a feature</u>, use:<br /><blockquote>/md toggle [coords/direction/both]</blockquote><br><br />To <u>change the color</u> of the labels or the values, use:<br><br /><blockquote>/md setColor [labels/values] [named color/hex code]</blockquote><br />To <u>reload the config</u>*, use:<br><br /><blockquote>/md reload</blockquote><br><br />*Only opped players may use by default</div>", 
         "image": "0-v1.0-commands.png"
       },
       {
