@@ -16,14 +16,14 @@
       {
         "title": "commands", 
         "icon": "terminal",
-        "body": "To <u>view the commands</u> available to you, use:<br /><div style={{\"backgroundColor\":\"gray\"}}>/md</div><br />To <u>enable or disable a feature</u>, use:<br /><blockquote>/md toggle [coords/direction/both]</blockquote><br />To <u>change the color</u> of the labels or the values, use:<br /><blockquote>/md setColor [labels/values] [named color/hex code]</blockquote><br />To <u>reload the config</u>*, use:<br /><blockquote>/md reload</blockquote><br />*Only opped players may use by default", 
+        "body": "To <u>view the commands</u> available to you, use:<br /><div className=\"light-colorBlocked\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><blockquote>/md toggle [coords/direction/both]</blockquote><br />To <u>change the color</u> of the labels or the values, use:<br /><blockquote>/md setColor [labels/values] [named color/hex code]</blockquote><br />To <u>reload the config</u>*, use:<br /><blockquote>/md reload</blockquote><br />*Only opped players may use by default", 
         "image": "0-v1.0-commands.png"
       },
       {
         "title": "config", 
         "icon": "sliders",
         "body": "Defaults for your players can be set using the config file.",
-        "toggleAccordion": { "title": "Generated Config File", "body": "To view the generated config file, go <a href=\"https://github.com/mikalooloo/MikaDirectional/blob/master/src/main/resources/config.yml\" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>." }
+        "toggleAccordion": { "title": "Looking for the default generated config file?", "body": "To view the generated config file, you can go <a href=\"https://github.com/mikalooloo/MikaDirectional/blob/master/src/main/resources/config.yml\" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>.", "variant": "spoilerButton", "mode": "light" }
       },
       {
         "title": "permissions", 
