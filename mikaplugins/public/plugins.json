@@ -16,7 +16,7 @@
       {
         "title": "commands", 
         "icon": "terminal",
-        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div><br />*Only opped players may use by default", 
+        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div>*Only opped players may use by default", 
         "image": "0-v1.0-commands.png"
       },
       {
@@ -28,7 +28,7 @@
       {
         "title": "permissions", 
         "icon": "user-pen",
-        "body": "By default, all players may customize the appearance of their action bar through /md toggle and /md setColor.<br /><br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedUserPerms: <s>false</s> true</div><br />Then, players will need the <u>MikaDirectional.User</u> permission to use /md, /md toggle, and /md setColor.<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />By default, only opped playeres may reload the config through /md reload.<br /><br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedReloadPerms: <s>true</s> false</div><br />Then, players will no longer need to be opped or have the <u>MikaDirectional.Reload</u> permission to use /md reload."
+        "body": "By default, all players may customize the appearance of their action bar through /md toggle and /md setColor.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedUserPerms: <s>false</s> true</div>Then, players will need the <u>MikaDirectional.User</u> permission to use /md, /md toggle, and /md setColor.<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />By default, only opped playeres may reload the config through /md reload.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedReloadPerms: <s>true</s> false</div>Then, players will no longer need to be opped or have the <u>MikaDirectional.Reload</u> permission to use /md reload."
       }
     ],
     "spigotLink": "https://www.spigotmc.org/resources/mikas-directional-onscreen-coords-direction.102009/"
