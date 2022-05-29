@@ -16,7 +16,7 @@
       {
         "title": "commands", 
         "icon": "terminal",
-        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div>*Only opped players may use by default", 
+        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div>*Only opped players may use by default.<br />", 
         "image": "0-v1.0-commands.png"
       },
       {

@@ -1,7 +1,6 @@
 import "./mc-plugin.css";
-import React, { useContext, useEffect, useState, useRef, useMemo } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import axiosInstance from "../../../apis/axios-instance";
 import { ThemeContext } from "../../theme";
 import MCInstall from "./mc-install";
 import ToggleAccordion from "../../toggle-accordion";
@@ -18,12 +17,12 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 // using html
-import parse from 'html-react-parser';
+import parse, { attributesToProps, domToReact } from 'html-react-parser';
 import DOMPurify from 'dompurify';
 
 export default function MCPlugin(props) {
   // loading the correct plugin
-  const [plugins, setPlugins] = useState(null);
+  const [plugins] = useState(JSON.parse(localStorage.getItem("plugins")));
   const [plugin, setPlugin] = useState(null);
   let { pluginID } = useParams();
   // theme
@@ -32,40 +31,57 @@ export default function MCPlugin(props) {
   // feather icon 
   const [featherIcon, setFeatherIcon] = useState(solid("feather-pointed"));
   // allows usage of html variables!
-  let overviewRef = useRef();
-  let featuresRef = useRef();
   let howToUseHTML = useMemo(() => { 
     if (plugin) { 
       let temp = plugin.howToUse.map(dict => {
         return dict;
-      })
-    
+      });
       return temp;
     }
     else {
       return [];
     }}, [plugin]);
 
-  // get plugins list
-  useEffect(() => {
-    axiosInstance.get("/public/plugins.json")
-    .then(response => {
-      setPlugins(response.data);
-    });
-  }, []);
+  // use to sanitize and parse a html string
+  const cleanHTML = (htmlString) => {
+    return parse(DOMPurify.sanitize(htmlString, sanitizeOptions), parseOptions);
+  }
+  // replaces tags with the right color mode
+  const parseOptions = {
+    replace: domNode => {
+      if (!domNode.attribs) {
+        return;
+      }
+
+      // adds quote blocking
+      if (domNode.attribs.id === "q") {
+        return darkMode ? <div className="dark-colorBlocked">{domToReact(domNode.children, parseOptions)}</div> : <div className="light-colorBlocked">{domToReact(domNode.children, parseOptions)}</div>;
+      }
+
+      // adds custom link coloring
+      if (domNode.name === "a") {
+        const props = attributesToProps(domNode.attribs);
+        return darkMode ? <span className="dark-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span> : <span className="light-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span>;
+      }
+    }
+  };
+  // allows more tags/attributes/etc when sanitizing
+  const sanitizeOptions = {
+    ADD_ATTR: [ "style", "class", "className", "quote" ],
+    ADD_TAGS: [ "backgroundColor", "id" ]
+  }
+  // allows custom icons in html
+  const customIcons = {
+    "terminal" : solid("terminal"),
+    "sliders" : solid("sliders"),
+    "user-pen" : solid("user-pen"),
+  };
+  // uses the above 
 
   // get plugin to load
   useEffect(() => {
     if (plugins) setPlugin(plugins[Number(pluginID)]);
   }, [plugins, pluginID]);
-
-  // use html
-  useEffect(() => {
-    if (plugin) {
-      overviewRef.current.innerHTML = plugin.overview;
-      featuresRef.current.innerHTML = plugin.features;
-    }
-  }, [overviewRef, featuresRef, plugin]);
 
   // allow swapping of feather icon
   const swapFeatherIcon = () => {
@@ -84,8 +100,7 @@ export default function MCPlugin(props) {
           <Image
           fluid="true"
           thumbnail="true"
-          src={plugin.thumbnail}
-          />
+          src={plugin.thumbnail} />
           <Stack style={{"textAlign":"center", "paddingTop":"1%"}}>
             <div>last updated {plugin.updateDate}: {plugin.version}</div>
             <div>works with {plugin.minecraft}</div>
@@ -107,7 +122,11 @@ export default function MCPlugin(props) {
           </div>
           <Container style={{"paddingTop":"3%"}}>
             <Row>
-              <Col style={{"paddingTop":"7%","paddingRight":"3%"}}><div ref={overviewRef} /><br />{plugin.featuresTitle}<div ref={featuresRef} /></Col>
+              <Col style={{"paddingTop":"5%","paddingRight":"3%"}}>
+                {cleanHTML(plugin.overview)}<br /><br />
+                {plugin.featuresTitle}
+                {cleanHTML(plugin.features)}
+              </Col>
               <Col xs={5}>
                 <Table variant={darkMode ? "dark" : "light" } style={{"textAlign":"center"}}>
                   <thead>
@@ -138,20 +157,35 @@ export default function MCPlugin(props) {
 
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="install"/></div>
           <h1 className="sectionTitle"><FontAwesomeIcon icon={solid("crow")} size="lg" /> how to install</h1>
-          <MCInstall name={plugin.name} spigotLink={plugin.spigotLink}/>
+          <MCInstall name={plugin.name} spigotLink={plugin.spigotLink} />
 
           {/* HOW TO USE */}
-
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="use"/></div>
           <h1 className="sectionTitle">how to use <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
-
+          <Container>
             {plugin && howToUseHTML ? 
-            <Accordion className={darkMode ? "gray-accordion" : "pink-accordion"}>
+            <Accordion defaultActiveKey={howToUseHTML[0].title} className={darkMode ? "gray-accordion" : "pink-accordion"} style={{"width":"50rem", "margin": "0 auto", "paddingRight":"3%", "textAlign":"left"}}>
               {howToUseHTML.map(item => {
                 return (
                   <Accordion.Item eventKey={item.title}>
-                    <Accordion.Header>{item.title}</Accordion.Header> 
-                    <Accordion.Body>{parse(DOMPurify.sanitize(item.body))}</Accordion.Body>
+                    <Accordion.Header>{item.icon ? <FontAwesomeIcon icon={customIcons[item.icon]} /> : ""}&nbsp;&nbsp;{item.title}</Accordion.Header> 
+                    <Accordion.Body>
+                      {item.image ? 
+                      <div className="image">
+                        <Image
+                          fluid="true"
+                          thumbnail="true"
+                          src={item.image} />
+                          <br /><br />
+                      </div> : ""}
+                      {cleanHTML(item.body)}
+                      {item.toggleAccordion ? 
+                      <div className="toggleAccordion">
+                        <br />
+                        <ToggleAccordion title={item.toggleAccordion.title} body={cleanHTML(item.toggleAccordion.body)} variant={item.toggleAccordion.variant} customMode={item.toggleAccordion.customMode} /> 
+                      </div> : ""}
+                      <br />
+                    </Accordion.Body>
                   </Accordion.Item>
                 );
               })}
@@ -160,8 +194,8 @@ export default function MCPlugin(props) {
             <div style={{"textAlign":"center"}}>
               <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin /> Loading <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin />
             </div>}
+          </Container>
           
-
           {/* CREDITS */}
 
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="credits"/></div>

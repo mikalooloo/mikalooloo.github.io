@@ -1,18 +1,24 @@
 .toggleCard, .toggleCard-light-spoilerButton, .toggleCard-light-silentButton, .toggleCard-dark-spoilerButton, .toggleCard-dark-silentButton {
-  width: 18rem;
   margin: 0 auto;
+  text-align: center;
 }
 .toggleCard-dark-silentButton {
+  width: 18rem;
   background-color: #212528;
+  color: white;
 }
 .toggleCard-dark-spoilerButton {
+  width: 15rem;
   background-color: #424242;
+  color: white;
 }
 .toggleCard-light-silentButton {
+  width: 18rem;
   background-color: rgb(255, 255, 255);
   border: rgb(252, 252, 252);
 }
 .toggleCard-light-spoilerButton {
+  width: 15rem;
   background-color: rgb(231, 231, 231);
   border: rgb(252, 252, 252);
 }
@@ -20,6 +26,9 @@
 .spoilerButton-dark, .spoilerButton-dark:active:focus, .spoilerButton-dark:active, .spoilerButton-dark:hover, .spoilerButton-dark:focus {
   background-color: rgb(109, 109, 109);
   border: gray;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .spoilerButton-dark:focus {
   box-shadow: 0 0 5px 1px gray;
@@ -32,8 +41,11 @@
 }
 .spoilerButton-light, .spoilerButton-light:active:focus, .spoilerButton-light:active, .spoilerButton-light:hover, .spoilerButton-light:focus {
   background-color: rgb(240, 240, 240);
-  color: rgb(68, 68, 68);
+  color: rgb(48, 48, 48);
   border: gray;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .spoilerButton-light:focus {
   box-shadow: 0 0 5px 1px gray;
@@ -48,6 +60,9 @@
   background-color: rgb(47, 49, 53);
   color: rgb(197, 197, 197);
   border: gray;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .silentButton-dark:focus {
   box-shadow: 0 0 5px 1px rgb(75, 75, 75);
@@ -60,8 +75,11 @@
 }
 .silentButton-light, .silentButton-light:active:focus, .silentButton-light:active, .silentButton-light:hover, .silentButton-light:focus {
   background-color: rgb(235, 235, 235);
-  color: rgb(68, 68, 68);
+  color: rgb(94, 94, 94);
   border: rgb(175, 175, 175);
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .silentButton-light:focus {
   box-shadow: 0 0 5px 1px rgb(197, 197, 197);

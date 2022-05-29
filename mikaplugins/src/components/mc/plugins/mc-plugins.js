@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axiosInstance from "../../../apis/axios-instance";
+import React, { useState } from "react";
 import MCPluginCard from "./mc-plugin-card";
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export default function MCPlugins(props) {
-  const [plugins, setPlugins] = useState(null);
-
-  // get plugins list
-  useEffect(() => {
-    axiosInstance.get("/public/plugins.json")
-    .then(response => {
-      setPlugins(response.data);
-    });
-  }, []);
+  const [plugins] = useState(JSON.parse(localStorage.getItem("plugins")));
 
   return (
     <Container>

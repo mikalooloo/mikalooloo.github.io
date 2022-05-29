@@ -11,6 +11,7 @@ export default function ToggleAccordion(props) {
   let title = props.title ? props.title : "";
   let body = props.body ? props.body : "";
   let variant = props.variant ? props.variant : "spoilerButton";
+  let customMode = props.customMode ? props.customMode : "";
   // theme
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -18,7 +19,7 @@ export default function ToggleAccordion(props) {
   const ToggleButton = ({children, eventKey}) => {
     return (
       <Button
-        className={variant + (darkMode ? "-dark" : "-light")}
+        className={variant + (customMode ? ("-" + customMode) : (darkMode ? "-dark" : "-light"))}
         size="sm"
         onClick={useAccordionButton(eventKey)}
       >
@@ -29,7 +30,7 @@ export default function ToggleAccordion(props) {
 
   return (
     <Accordion>
-      <Card className={(darkMode ? "toggleCard-dark" : "toggleCard-light") + "-" + variant}>
+      <Card className={"toggleCard" + (customMode ? ("-" + customMode) : (darkMode ? "-dark" : "-light")) + "-" + variant}>
         <Card.Header>
           <ToggleButton eventKey="0">{title}</ToggleButton>
         </Card.Header>
