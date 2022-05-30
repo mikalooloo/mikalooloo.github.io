@@ -7,11 +7,11 @@ import { ThemeContext } from '../../theme';
 
 export default function MCFooter(props) {
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const darkMode = theme.darkMode;
 
   const handleToggle = () => {
-    if (darkMode) theme.dispatch({ type: "lightMode" });
-    else theme.dispatch({ type: "darkMode" });
+    if (darkMode) theme.setDarkMode(false);
+    else theme.setDarkMode(true);
   };
 
   return (

@@ -14,7 +14,7 @@ export default function ToggleAccordion(props) {
   let customMode = props.customMode ? props.customMode : "";
   // theme
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const darkMode = theme.darkMode;
 
   const ToggleButton = ({children, eventKey}) => {
     return (

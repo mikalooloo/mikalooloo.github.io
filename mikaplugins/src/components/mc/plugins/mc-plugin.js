@@ -1,9 +1,10 @@
 import "./mc-plugin.css";
-import React, { useContext, useEffect, useState, useMemo } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { ThemeContext } from "../../theme";
 import MCInstall from "./mc-install";
 import ToggleAccordion from "../../toggle-accordion";
+import StringToHTML from "../../string-to-html";
 // bootstrap
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -16,22 +17,23 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-// using html
-import parse, { attributesToProps, domToReact } from 'html-react-parser';
-import DOMPurify from 'dompurify';
+import MCReportBug from "./mc-report-bug";
+import MCQuestion from "./mc-question";
+import MCFeature from "./mc-feature";
+
 
 export default function MCPlugin(props) {
   // loading the correct plugin
-  const [plugins] = useState(JSON.parse(localStorage.getItem("plugins")));
-  const [plugin, setPlugin] = useState(null);
+  const [plugins] = React.useState(JSON.parse(localStorage.getItem("plugins")));
+  const [plugin, setPlugin] = React.useState(null);
   let { pluginID } = useParams();
-  // theme
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
-  // feather icon 
-  const [featherIcon, setFeatherIcon] = useState(solid("feather-pointed"));
+
+  // setting the theme
+  const theme = React.useContext(ThemeContext);
+  const darkMode = theme.darkMode;
+
   // allows usage of html variables!
-  let howToUseHTML = useMemo(() => { 
+  let howToUseHTML = React.useMemo(() => { 
     if (plugin) { 
       let temp = plugin.howToUse.map(dict => {
         return dict;
@@ -42,53 +44,29 @@ export default function MCPlugin(props) {
       return [];
     }}, [plugin]);
 
-  // use to sanitize and parse a html string
-  const cleanHTML = (htmlString) => {
-    return parse(DOMPurify.sanitize(htmlString, sanitizeOptions), parseOptions);
-  }
-  // replaces tags with the right color mode
-  const parseOptions = {
-    replace: domNode => {
-      if (!domNode.attribs) {
-        return;
-      }
-
-      // adds quote blocking
-      if (domNode.attribs.id === "q") {
-        return darkMode ? <div className="dark-colorBlocked">{domToReact(domNode.children, parseOptions)}</div> : <div className="light-colorBlocked">{domToReact(domNode.children, parseOptions)}</div>;
-      }
-
-      // adds custom link coloring
-      if (domNode.name === "a") {
-        const props = attributesToProps(domNode.attribs);
-        return darkMode ? <span className="dark-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span> : <span className="light-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span>;
-      }
-    }
-  };
-  // allows more tags/attributes/etc when sanitizing
-  const sanitizeOptions = {
-    ADD_ATTR: [ "style", "class", "className", "quote" ],
-    ADD_TAGS: [ "backgroundColor", "id" ]
-  }
   // allows custom icons in html
   const customIcons = {
+    "feather" : solid("feather"),
+    "feather-pointed" : solid("feather-pointed"),
     "terminal" : solid("terminal"),
     "sliders" : solid("sliders"),
     "user-pen" : solid("user-pen"),
   };
-  // uses the above 
+  // feather icon state
+  const [featherIcon, setFeatherIcon] = React.useState(customIcons["feather"]);
+  // allow swapping of feather icon
+  const swapFeatherIcon = () => {
+    if (featherIcon === customIcons["feather-pointed"]) setFeatherIcon(customIcons["feather"]);
+    else setFeatherIcon(customIcons["feather-pointed"]);
+  };
 
-  // get plugin to load
-  useEffect(() => {
+  // HOOKS
+  // get the right plugin to load
+  React.useEffect(() => {
     if (plugins) setPlugin(plugins[Number(pluginID)]);
   }, [plugins, pluginID]);
 
-  // allow swapping of feather icon
-  const swapFeatherIcon = () => {
-    if (featherIcon === solid("feather-pointed")) setFeatherIcon(solid("feather"));
-    else setFeatherIcon(solid("feather-pointed"));
-  }
-
+  // RENDER
   return (
     <Container>
       {plugin ? 
@@ -123,9 +101,9 @@ export default function MCPlugin(props) {
           <Container style={{"paddingTop":"3%"}}>
             <Row>
               <Col style={{"paddingTop":"5%","paddingRight":"3%"}}>
-                {cleanHTML(plugin.overview)}<br /><br />
+                <StringToHTML string={plugin.overview} darkMode={darkMode} /><br /><br />
                 {plugin.featuresTitle}
-                {cleanHTML(plugin.features)}
+                <StringToHTML string={plugin.features} darkMode={darkMode} />
               </Col>
               <Col xs={5}>
                 <Table variant={darkMode ? "dark" : "light" } style={{"textAlign":"center"}}>
@@ -139,9 +117,9 @@ export default function MCPlugin(props) {
                     <tr><td><Link to="#use">how to use</Link></td></tr>
                     <tr><td><Link to="#credits">credits</Link></td></tr>
                     <tr><td><Link to="#docs">documentation</Link></td></tr>
-                    <tr><td><Link to="#bug">report bug</Link></td></tr>
-                    <tr><td><Link to="#question">ask question</Link></td></tr>
-                    <tr><td><Link to="#feature">suggest feature</Link></td></tr>
+                    <tr><td><Link to="#bug">report a bug</Link></td></tr>
+                    <tr><td><Link to="#question">ask a question</Link></td></tr>
+                    <tr><td><Link to="#feature">suggest a feature</Link></td></tr>
                   </tbody>
                 </Table>
               </Col>
@@ -167,7 +145,7 @@ export default function MCPlugin(props) {
             <Accordion defaultActiveKey={howToUseHTML[0].title} className={darkMode ? "gray-accordion" : "pink-accordion"} style={{"width":"50rem", "margin": "0 auto", "paddingRight":"3%", "textAlign":"left"}}>
               {howToUseHTML.map(item => {
                 return (
-                  <Accordion.Item eventKey={item.title}>
+                  <Accordion.Item key={item.title} eventKey={item.title}>
                     <Accordion.Header>{item.icon ? <FontAwesomeIcon icon={customIcons[item.icon]} /> : ""}&nbsp;&nbsp;{item.title}</Accordion.Header> 
                     <Accordion.Body>
                       {item.image ? 
@@ -178,11 +156,11 @@ export default function MCPlugin(props) {
                           src={item.image} />
                           <br /><br />
                       </div> : ""}
-                      {cleanHTML(item.body)}
+                      <StringToHTML string={item.body} darkMode={darkMode} />
                       {item.toggleAccordion ? 
                       <div className="toggleAccordion">
                         <br />
-                        <ToggleAccordion title={item.toggleAccordion.title} body={cleanHTML(item.toggleAccordion.body)} variant={item.toggleAccordion.variant} customMode={item.toggleAccordion.customMode} /> 
+                        <ToggleAccordion title={item.toggleAccordion.title} body={<StringToHTML string={item.toggleAccordion.body} darkMode={darkMode} />} variant={item.toggleAccordion.variant} customMode={item.toggleAccordion.customMode} /> 
                       </div> : ""}
                       <br />
                     </Accordion.Body>
@@ -190,7 +168,7 @@ export default function MCPlugin(props) {
                 );
               })}
             </Accordion>
-              :
+            :
             <div style={{"textAlign":"center"}}>
               <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin /> Loading <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin />
             </div>}
@@ -214,17 +192,36 @@ export default function MCPlugin(props) {
 
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="docs"/></div>
           <h1 className="sectionTitle">documentation <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+          <div style={{"textAlign":"center", "paddingBottom":"1%"}}>Looking to view the documentation or the source code of this plugin? Look no further!</div>
+          <Stack direction="horizontal" gap={4} style={{"justifyContent":"center", "paddingRight": "2%"}}>
+            <a href={plugin.docsLink} target="_blank" rel="noopener noreferrer">
+              <Button variant="light">Documentation</Button>
+            </a>
+            <a href={plugin.codeLink} target="_blank" rel="noopener noreferrer">
+              <Button variant="light">Source Code</Button>
+            </a>
+          </Stack>
 
           {/* HELP */}
 
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="help"/></div>
           <h1 className="sectionTitle"><FontAwesomeIcon icon={solid("crow")} size="lg" /> help</h1>
+          <div style={{"textAlign":"center"}}>
+            Need some help with this plugin? You're in the right place!<br />If the following isn't helpful at all, feel free to email me at <span className={props.darkMode ? "dark-linkText" : "light-linkText"}><a href="mailto: mikaminecraft.official@gmail.com" target="_blank" rel="noopener noreferrer">mikaminecraft.official@gmail.com</a></span>!
+          </div>
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="bug"/></div>
+
           <h3 className="sectionTitle">report a bug</h3>
+          <MCReportBug bugLink={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Abug"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="question"/></div>
-          <h3 className="sectionTitle">ask question</h3>
+          
+          <h3 className="sectionTitle">ask a question</h3>
+          <MCQuestion questionLinkClosed={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aclosed"} questionLinkOpened={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aopen"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="feature"/></div>
+
           <h3 className="sectionTitle">suggest a feature&nbsp;&nbsp;<FontAwesomeIcon icon={solid("egg")} size="lg" /></h3>
+          <MCFeature featureLinkClosed={plugin.codeLink + "https://github.com/mikalooloo/MikaDirectional/issues?q=is%3Aissue+label%3Aenhancement+label%3Awontfix+is%3Aclosed"} featureLinkOpened={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
+          
           <div className="iconDivider">
             <FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} transform={{ rotate: 10 }} flip="both" />
             <FontAwesomeIcon icon={featherIcon} size="xl" onClick={swapFeatherIcon} transform={{ rotate: -50 }} flip="vertical" />
@@ -250,54 +247,3 @@ export default function MCPlugin(props) {
 // Report Bug
 // Ask Question
 // Suggest Feature
-
-/*
-plugin.howToUse.map(item => {
-              return (
-                <Accordion.Item eventKey={item.title}>
-                  <Accordion.Header>{item.title}</Accordion.Header>
-                  <Accordion.Body>
-                    {item.image ? 
-                    <Image
-                      fluid="true"
-                      thumbnail="true"
-                      src={item.image}
-                    /> : ""}
-                    {item.body}
-                    {item.toggleAccordion ? 
-                    <ToggleAccordion
-                      title={item.toggleAccordion.title}
-                      body={item.toggleAccordion.body}
-                      variant={item.toggleAccordion.variant}
-                    />
-                    : ""}
-                  </Accordion.Body>
-                </Accordion.Item>
-              );
-            })
-            
-            
-            plugin.howToUse.map((dict, i) => {
-        return howToUseRef.current[i].innerHTML = dict.map(item => {
-          return item;
-        })
-      })
-
-      plugin.howToUse.map((itemId, id) => {
-        return (
-          howToUseRef = map((item, i) => {
-          return item;
-        }))
-        howToUseRef.current[i][0].innerHTML = item.title;
-        howToUseRef.current[i][1].innerHTML = item.body;
-        howToUseRef.current[i][2].innerHTML = item.image ? item.image : null;
-        howToUseRef.current[i][3].innerHTML = item.toggleAccordion ? item.toggleAccordion : null;
-      })
-      
-      plugin.howToUse.map((item, i) => {
-              return (<Accordion.Item key={i}>
-                <Accordion.Header><div ref={(el) => {howToUseRef.current[i].innerHTML = item.title; el = howToUseRef.current[i];}}/></Accordion.Header> 
-                <Accordion.Body><div ref={(el) => {howToUseRef.current[i].innerHTML = item.body; el = howToUseRef.current[i];}}/></Accordion.Body>
-              </Accordion.Item>);
-            })
-            */

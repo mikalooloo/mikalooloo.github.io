@@ -8,7 +8,7 @@ import React, { useEffect } from 'react';
 export default function useLocalStorage(key, defaultState) {
   // using the stored state as the initial state, if no value default to true
   const [value, setValue] = React.useState(
-    JSON.parse(localStorage.getItem(key)) || defaultState
+    localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : defaultState
   );
 
   // this hook prevents potential breakage so value is always saved upon change

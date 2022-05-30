@@ -8,7 +8,7 @@ export default function MCPluginCard(props) {
   const plugin = props.plugin;
   //theme
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const darkMode = theme.darkMode;
 
   return (
     <Link to={"/minecraft/plugins/" + plugin.id} style={{"textDecoration":"none"}}>

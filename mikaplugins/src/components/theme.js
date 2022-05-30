@@ -1,24 +1,10 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext } from "react";
+import useLocalStorage from "../apis/use-local-storage";
 
 export const ThemeContext = createContext();
 
-const reduceTheme = (state, action) => {
-  switch(action.type) {
-    case "darkMode":
-      return { darkMode: true };
-    case "lightMode":
-      return { darkMode: false };
-    default:
-      return state;
-  }
-}
-
-const initialTheme = {
-  darkMode: true,
-};
-
 export function ThemeProvider(props) {
-  const [state, dispatch] = useReducer(reduceTheme, initialTheme);
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", true);
 
-  return <ThemeContext.Provider value={{ state, dispatch }}>{props.children}</ThemeContext.Provider>
+  return <ThemeContext.Provider value={{ darkMode, setDarkMode }}>{props.children}</ThemeContext.Provider>
 }

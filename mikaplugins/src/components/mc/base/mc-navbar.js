@@ -7,7 +7,7 @@ import { ThemeContext } from '../../theme';
 
 export default function MCNavbar(props) {
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const darkMode = theme.darkMode;
 
   return (
     <Navbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} expand="lg" className={props.stick} style={{'paddingTop':'0.5%', 'paddingBottom':'0.5%'}}>

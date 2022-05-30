@@ -15,7 +15,7 @@ export default function MCInstall(props) {
   let spigotLink = props.spigotLink ? props.spigotLink : "";
   // theme
   const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
+  const darkMode = theme.darkMode;
 
   // if no spigot link, give a generic download spiel
   // if a link is given, give a specific download spiel
