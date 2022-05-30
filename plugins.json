@@ -10,7 +10,7 @@
     "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar", 
     "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
     "overview": "Never get lost again! <b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! The action bar appears upon movement and fades away after a few seconds of no movement.",
-    "featuresTitle": "Customizations include:",
+    "featuresTitle": "Customizations and features include:",
     "features": "<ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict usage of in-game commands</li></ul>​",
     "howToUse": [
       {
@@ -31,6 +31,8 @@
         "body": "By default, all players may customize the appearance of their action bar through /md toggle and /md setColor.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedUserPerms: <s>false</s> true</div>Then, players will need the <u>MikaDirectional.User</u> permission to use /md, /md toggle, and /md setColor.<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />By default, only opped playeres may reload the config through /md reload.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedReloadPerms: <s>true</s> false</div>Then, players will no longer need to be opped or have the <u>MikaDirectional.Reload</u> permission to use /md reload."
       }
     ],
+    "docsLink": "https://mikalooloo.bitbucket.io/0/",
+    "codeLink": "https://github.com/mikalooloo/MikaDirectional/",
     "spigotLink": "https://www.spigotmc.org/resources/mikas-directional-onscreen-coords-direction.102009/"
   },
   {
