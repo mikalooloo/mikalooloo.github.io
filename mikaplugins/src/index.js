@@ -12,14 +12,16 @@ import MCBase from './components/mc/base/mc-base';
 import MCHome from './components/mc/home/mc-home';
 import MCPlugins from './components/mc/plugins/mc-plugins';
 import MCPlugin from './components/mc/plugins/mc-plugin';
+import MCContactMe from './components/mc/about-me/mc-contact-me';
+import MCAboutMe from './components/mc/about-me/mc-about-me';
 
 // Initializing Sentry
 Sentry.init({
-  dsn: "https://7fdd27a868044f48b6bcf0d0669c71a0@o1253165.ingest.sentry.io/6419919",
+  dsn: process.env.REACT_APP_SENTRY,
   integrations: [new BrowserTracing()],
 
   // captures 100% of transcations -- prob should change this for deployment
-  tracesSampleRate: 1.0, 
+  tracesSampleRate: 1.0,
 });
 
 // Initializing React
@@ -34,12 +36,14 @@ root.render(
             <Route index element={<MCHome />} />
             <Route path="plugins" element={<MCPlugins />} />
             <Route path="plugins/:pluginID" element={<MCPlugin />} />
+            <Route path="about-me" element={<MCAboutMe />} />
+            <Route path="contact-me" element={<MCContactMe />} />
           </Route>
         </Route>
       </Routes>
     </Router>
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

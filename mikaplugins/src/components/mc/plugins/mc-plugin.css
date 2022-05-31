@@ -126,4 +126,12 @@
   color: #1D1D1D;
 }
 
+.light-bar .progress-bar {
+  background-color: #f5b1dc;
+}
+
+.dark-bar .progress-bar {
+  background-color: #f079c2;
+}
+
 /*# sourceMappingURL=mc-plugin.css.map */

@@ -17,8 +17,8 @@ export default function MCFooter(props) {
   return (
     <footer className={darkMode ? "dark-footer-body" : "light-footer-body"}>
       <section className={darkMode ? "dark-footer-border" : "light-footer-border"}>ㅤ</section>
-      <Container className="footer-text" style={{'marginTop': '1%', 'marginBottom': '1%'}}>
-        <Row style={{'fontWeight':'bold'}}>
+      <Container className="footer-text" style={{ 'marginTop': '1%', 'marginBottom': '1%' }}>
+        <Row style={{ 'fontWeight': 'bold' }}>
           <Col>Popular Plugins</Col>
           <Col>Help</Col>
           <Col>Support</Col>
@@ -27,19 +27,19 @@ export default function MCFooter(props) {
         <Row>
           <Col><Link to="/minecraft/plugins/0">Mika's Directional</Link></Col>
           <Col>Report a Bug</Col>
-          <Col>Send a Compliment</Col>
-          <Col><span onClick={handleToggle} style={{'cursor':'pointer'}}>{darkMode ? "Light Mode" : "Dark Mode"}</span></Col>
+          <Col><a href="https://ko-fi.com/mikalooloo" target="_blank" rel="noopener noreferrer">Send a Tip</a></Col>
+          <Col><span onClick={handleToggle} style={{ 'cursor': 'pointer' }}>{darkMode ? "Light Mode" : "Dark Mode"}</span></Col>
         </Row>
         <Row>
           <Col></Col>
           <Col>Suggest a Feature</Col>
-          <Col>Leave a Kind Review</Col>
+          <Col>Leave a Review</Col>
           <Col>Fun Fact</Col>
         </Row>
         <Row>
           <Col></Col>
-          <Col>Contact Me</Col>
-          <Col>Tip Me</Col>
+          <Col><Link to="/minecraft/contact-me">Contact Me</Link></Col>
+          <Col><Link to="/minecraft/contact-me">Give a Compliment</Link></Col>
           <Col></Col>
         </Row>
       </Container>
