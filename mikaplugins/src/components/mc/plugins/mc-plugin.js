@@ -24,7 +24,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 
-
 export default function MCPlugin(props) {
   // loading the correct plugin
   const [plugins] = useOutletContext();

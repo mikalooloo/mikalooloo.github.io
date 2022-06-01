@@ -50,14 +50,17 @@
   color: #260000;
   background-color: #faeaea;
 }
+
 .pink-tabs li .nav-link:hover {
   box-shadow: 0 0 15px 1px #C68484;
   color: #310707;
 }
+
 .pink-tabs li .nav-link:focus {
   box-shadow: 0 0 12px 1px #bd6767;
   color: #251313;
 }
+
 .pink-tabs li .nav-link.active {
   box-shadow: 0 0 10px 1px #bd6767;
   color: #251313;
@@ -69,12 +72,15 @@
   color: #260000;
   background-color: #fff8f8;
 }
+
 .pink-accordion .accordion-button:hover {
   box-shadow: 0 0 10px 1px #C68484;
 }
+
 .pink-accordion .accordion-button:focus {
   box-shadow: 0 0 10px 1px #bd6767;
 }
+
 .pink-accordion .accordion-button:not(.collapsed)::after {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
@@ -85,14 +91,17 @@
   color: #1D1D1D;
   background-color: #c5c5c5;
 }
+
 .gray-tabs li .nav-link:hover {
   box-shadow: 0 0 15px 1px #4b4b4b;
   color: #310707;
 }
+
 .gray-tabs li .nav-link:focus {
   box-shadow: 0 0 10px 1px rgb(36, 36, 36);
   color: #251313;
 }
+
 .gray-tabs li .nav-link.active {
   box-shadow: 0 0 10px 1px rgb(36, 36, 36);
   color: #251313;
@@ -103,27 +112,28 @@
   color: #1D1D1D;
   text-align: center;
 }
+
 .gray-accordion .accordion-button {
   box-shadow: 0 0 5px #797979;
   color: #1D1D1D;
   background-color: #F6F6F6;
 }
+
 .gray-accordion .accordion-button:hover {
   box-shadow: 0 0 15px 1px #969696;
 }
+
 .gray-accordion .accordion-button:focus {
   box-shadow: 0 0 10px 1px #474747;
 }
+
 .gray-accordion .accordion-button:not(.collapsed)::after {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
+
 .gray-accordion .accordion-button a {
   color: red;
-}
-
-.gray-accordion {
-  color: #1D1D1D;
 }
 
 .light-bar .progress-bar {

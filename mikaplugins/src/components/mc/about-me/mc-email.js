@@ -70,7 +70,7 @@ export default function MCEmail() {
         </p>
 
         <div style={{ "paddingTop": "5%", "textAlign": "center" }}>
-          <Button variant="secondary" type="submit">
+          <Button aria-label="Submit" variant="secondary" type="submit">
             Send Message
           </Button>
         </div>

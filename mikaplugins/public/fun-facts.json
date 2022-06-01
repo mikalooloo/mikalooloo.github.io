@@ -48,5 +48,20 @@
     "factId": "9",
     "fact": "In a tarot card deck, there are usually 22 Major Arcana cards, numbered from 0 to 21.",
     "source": "https://en.wikipedia.org/wiki/Major_Arcana"
+  },
+  {
+    "factId": "10",
+    "fact": "Woodpeckers' tongues wrap completely around the head before exiting the mouth to prevent brain damage.",
+    "source": "https://sites.nd.edu/biomechanics-in-the-wild/2019/09/30/how-much-wood-can-a-woodpecker-peck-the-science-behind-a-woodpeckers-anatomy/"
+  },
+  {
+    "factId": "11",
+    "fact": "Mika's current favorite fruit is a pomegranate!",
+    "source": "Me"
+  },
+  {
+    "factId": "12",
+    "fact": "There is an easter egg on the page for a plugin. Have you found it yet?",
+    "source": "Me"
   }
 ]

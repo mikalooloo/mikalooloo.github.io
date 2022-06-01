@@ -13,7 +13,7 @@ export default function MCDownload(props) {
   let name = props.name;
 
   return (
-    <div style={{"textAlign":"center", "paddingBottom":"2%"}}>
+    <div style={{ "textAlign": "center", "paddingBottom": "2%" }}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <Button variant="secondary">
           <FontAwesomeIcon icon={solid("download")} />&nbsp;&nbsp;download {name}

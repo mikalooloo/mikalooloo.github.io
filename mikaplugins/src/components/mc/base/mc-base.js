@@ -1,5 +1,5 @@
 import './mc-base.css'
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import MCNavbar from './mc-navbar';
 import MCFooter from './mc-footer';
 import ErrorPopup from "../../error-popup";
@@ -10,13 +10,13 @@ import axiosInstance from "../../../apis/axios-instance";
 
 export default function MCBase(props) {
   // get theme
-  const theme = useContext(ThemeContext);
+  const theme = React.useContext(ThemeContext);
   const darkMode = theme.darkMode;
 
   // have the navbar stick to the top when scrolled down, and in its regular position when not
-  const [sticky, setSticky] = useState("sticky-top");
+  const [sticky, setSticky] = React.useState("sticky-top");
 
-  useEffect(() => {
+  React.useEffect(() => {
     const stickNavbar = () => {
       window.scrollY > 130 ? setSticky("fixed-top") : setSticky("sticky-top");
     };
@@ -29,9 +29,9 @@ export default function MCBase(props) {
   }, []);
 
   // get plugins list
-  const [plugins, setPlugins] = useState();
+  const [plugins, setPlugins] = React.useState();
 
-  useEffect(() => {
+  React.useEffect(() => {
     axiosInstance.get("/public/plugins.json")
       .then(response => {
         setPlugins(response.data);
