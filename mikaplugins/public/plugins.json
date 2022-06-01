@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Mika's Directional",
-    "tagline": "ADDS CUSTOMIZABLE ACTION BAR THAT DISPLAYS COORDINATES AND FACING DIRECTION",
+    "tagline": "adds a customizable action bar that displays coordinates and facing direction",
     "version": "v1.0",
     "updateDate": "May 14, 2022",
     "minecraft": "1.18",
