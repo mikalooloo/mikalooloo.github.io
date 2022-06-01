@@ -7,10 +7,11 @@ import DOMPurify from 'dompurify';
 export default function StringToHTML(props) {
   // allows more tags/attributes/etc when sanitizing
   const sanitizeOptions = {
-    ADD_ATTR: [ "style", "class", "className" ],
-    ADD_TAGS: [ "backgroundColor", "id" ]
+    FORCE_BODY: true,
+    ADD_ATTR: ["class", "className"],
+    ADD_TAGS: ["style", "id"]
   }
-  
+
   // replaces tags with the right color mode
   const parseOptions = {
     replace: domNode => {

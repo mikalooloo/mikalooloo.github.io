@@ -2,13 +2,18 @@ import "./mc-plugin.css";
 import React from "react";
 import { useOutletContext, useParams, Link } from "react-router-dom";
 import { ThemeContext } from "../../theme";
-import MCInstall from "./mc-install";
 import ToggleAccordion from "../../toggle-accordion";
 import StringToHTML from "../../string-to-html";
+import MCInstall from "./mc-install";
+import MCReportBug from "./mc-report-bug";
+import MCQuestion from "./mc-question";
+import MCFeature from "./mc-feature";
 // bootstrap
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Badge from "react-bootstrap/Badge";
 import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
@@ -17,9 +22,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
-import MCReportBug from "./mc-report-bug";
-import MCQuestion from "./mc-question";
-import MCFeature from "./mc-feature";
+
 
 
 export default function MCPlugin(props) {
@@ -36,6 +39,17 @@ export default function MCPlugin(props) {
   let howToUseHTML = React.useMemo(() => {
     if (plugin) {
       let temp = plugin.howToUse.map(dict => {
+        return dict;
+      });
+      return temp;
+    }
+    else {
+      return [];
+    }
+  }, [plugin]);
+  let updateLogHTML = React.useMemo(() => {
+    if (plugin) {
+      let temp = plugin.updateLog.map(dict => {
         return dict;
       });
       return temp;
@@ -76,21 +90,31 @@ export default function MCPlugin(props) {
           {/* OPENING */}
 
           <div className="opening">
-            <h1 style={{ "textAlign": "center", "paddingBottom": "1%" }}>{plugin.name}</h1>
+            <Link to="/minecraft/plugins">
+              <Button variant="secondary"><FontAwesomeIcon icon={solid("caret-left")} /> back</Button>
+            </Link>
+            <div style={{ "textAlign": "center", "paddingBottom": "1%" }}>
+              <h1>{plugin.name}&nbsp;&nbsp;<Badge bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>{plugin.version}</Badge><br /></h1>
+              <div style={{ "paddingTop": "1%" }}>{plugin.tagline}</div>
+            </div>
             <Image
               fluid="true"
               thumbnail="true"
               src={plugin.thumbnail} />
             <Stack style={{ "textAlign": "center", "paddingTop": "1%" }}>
-              <div>last updated {plugin.updateDate}: {plugin.version}</div>
+              <div>last updated {plugin.updateDate}</div>
               <div>works with {plugin.minecraft}</div>
             </Stack>
-            <Stack direction="horizontal" style={{ "justifyContent": "center", "paddingTop": "0.5%" }} gap={3} >
+            <Stack direction="horizontal" style={{ "justifyContent": "center", "paddingTop": "0.5%" }} gap={3}>
               <FontAwesomeIcon icon={solid("crow")} size="lg" />
               <Link to="#install"><Button variant="secondary"><FontAwesomeIcon icon={solid("download")} />&nbsp;&nbsp;download</Button></Link>
               <Link to="#use"><Button variant="secondary">how to</Button></Link>
               <Link to="#help"><Button variant="secondary">help</Button></Link>
               <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
+            </Stack>
+            <Stack direction="horizontal" style={{ "justifyContent": "center", "paddingTop": "1%" }} gap={3}>
+              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>15&nbsp;&nbsp;downloads</Badge>
+              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>0&nbsp;&nbsp;ratings</Badge>
             </Stack>
           </div>
 
@@ -107,8 +131,8 @@ export default function MCPlugin(props) {
               <Row>
                 <Col style={{ "paddingTop": "6%", "paddingRight": "3%" }}>
                   <StringToHTML string={plugin.overview} darkMode={darkMode} /><br /><br />
-                  {plugin.featuresTitle}
-                  <StringToHTML string={plugin.features} darkMode={darkMode} />
+                  <h5 style={{ "textAlign": "center" }}><FontAwesomeIcon icon={solid("crow")} size="xl" /> FEATURES <FontAwesomeIcon icon={solid("crow")} size="xl" flip="horizontal" /> </h5>
+                  <div style={{ "textAlign": "center", "paddingTop": "1%" }}><StringToHTML string={plugin.features} darkMode={darkMode} /></div>
                 </Col>
                 <Col xs={5}>
                   <Table variant={darkMode ? "dark" : "light"} style={{ "textAlign": "center" }}>
@@ -139,6 +163,37 @@ export default function MCPlugin(props) {
           <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="update" /></div>
           <div className="updateLog">
             <h1 className="sectionTitle">update log <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+            <Container>
+              <Accordion defaultActiveKey={updateLogHTML[1] ? updateLogHTML[0].version : null} className={darkMode ? "gray-accordion" : "pink-accordion"} style={{ "width": "30rem", "margin": "0 auto", "paddingRight": "3%", "textAlign": "left" }}>
+                {updateLogHTML.map(item => {
+                  return (
+                    <Accordion.Item key={item.version} eventKey={item.version}>
+                      <Accordion.Header>Version:&nbsp;<b>{item.version}</b>&nbsp;&nbsp;&nbsp;{`[`}Updated {item.date}{`]`}</Accordion.Header>
+                      <Accordion.Body>
+                        {item.image ?
+                          <div className="image">
+                            <Image
+                              fluid="true"
+                              thumbnail="true"
+                              src={item.image} />
+                            <br /><br />
+                          </div> : ""}
+                        <h4><FontAwesomeIcon icon={solid("square-plus")} />&nbsp;&nbsp;New Additions</h4>
+                        <div style={{ "textAlign": "center" }}><StringToHTML string={item.new} darkMode={darkMode} /></div>
+                        <h4><FontAwesomeIcon icon={solid("wrench")} />&nbsp;&nbsp;Bug Fixes</h4>
+                        <div style={{ "textAlign": "center" }}><StringToHTML string={item.fixes} darkMode={darkMode} /></div>
+                        {item.toggleAccordion ?
+                          <div className="toggleAccordion">
+                            <br />
+                            <ToggleAccordion title={item.toggleAccordion.title} body={<StringToHTML string={item.toggleAccordion.body} darkMode={darkMode} />} variant={item.toggleAccordion.variant} customMode={item.toggleAccordion.customMode} />
+                          </div> : ""}
+                        <br />
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  );
+                })}
+              </Accordion>
+            </Container>
           </div>
 
           {/* HOW TO INSTALL */}
@@ -212,10 +267,10 @@ export default function MCPlugin(props) {
             <p style={{ "textAlign": "center", "paddingBottom": "1%" }}>Looking to view the documentation or the source code of this plugin? Look no further!</p>
             <Stack direction="horizontal" gap={4} style={{ "justifyContent": "center", "paddingRight": "2%" }}>
               <a href={plugin.docsLink} target="_blank" rel="noopener noreferrer">
-                <Button variant={darkMode ? "light" : "dark"}>Documentation</Button>
+                <Button variant="secondary">Documentation</Button>
               </a>
               <a href={plugin.codeLink} target="_blank" rel="noopener noreferrer">
-                <Button variant={darkMode ? "light" : "dark"}>Source Code</Button>
+                <Button variant="secondary">Source Code</Button>
               </a>
             </Stack>
           </div>
@@ -252,7 +307,7 @@ export default function MCPlugin(props) {
               <p>Want to help support me? I really appreciate it! Here are some things you can do: </p>
               <Stack gap={3} direction="horizontal" style={{ "justifyContent": "center" }}>
                 <a href={plugin.spigotLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant={darkMode ? "light" : "dark"}>;=leave a {`(`}hopefully kind{`)`} review</Button>
+                  <Button variant={darkMode ? "light" : "dark"}>leave a {`(`}hopefully kind{`)`} review</Button>
                 </a>
                 <a href="https://ko-fi.com/mikalooloo" target="_blank" rel="noopener noreferrer">
                   <Button variant={darkMode ? "light" : "dark"}>send me a tip</Button>
