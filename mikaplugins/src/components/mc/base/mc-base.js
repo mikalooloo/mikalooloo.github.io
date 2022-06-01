@@ -29,14 +29,17 @@ export default function MCBase(props) {
   }, []);
 
   // get plugins list
-  const [plugins, setPlugins] = React.useState();
+  const [plugins, setPlugins] = React.useState([]);
 
   React.useEffect(() => {
-    axiosInstance.get("/public/plugins.json")
-      .then(response => {
-        setPlugins(response.data);
-      });
-  }, []);
+    const nums = Array.apply(null, Array(10)).map(function (currentValue, index) { return index; });
+
+    Promise.all(nums.map(i =>
+      axiosInstance.get(`/public/plugins/${i}.json`)
+        .then(response => {
+          setPlugins(plugins.push(response.data));
+        })));
+  }, [plugins]);
 
   return (
     <div className={darkMode ? "text-white" : "text-dark"}>
