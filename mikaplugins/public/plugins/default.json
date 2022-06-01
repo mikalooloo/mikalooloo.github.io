@@ -1,75 +1,73 @@
-[
-  {
-    "id": -1,
-    "name": "",
-    "tagline": "",
-    "version": "",
-    "updateDate": "",
-    "minecraft": "",
-    "downloads": "0",
-    "reviews": "0",
-    "updatedCounts": "",
-    "border": "",
-    "thumbnail": "",
-    "alt": "",
-    "desc": "",
-    "overview": "<div style='textAlign:center'></div><br /><b></b> is a Minecraft  plugin that adds ",
-    "features": "<ul><li> </li><li> </li><li> </li><li> </li><li> </li></ul>​",
-    "updateLog": [
-      {
-        "version": "",
-        "date": "",
-        "new": "Initial release!<br /><ul style='textAlign:left'></ul>",
-        "fixes": "N/A",
-        "image": "",
-        "toggleAccordion": {
-          "title": "",
-          "body": "",
-          "variant": "",
-          "customMode": ""
-        }
+{
+  "id": -1,
+  "name": "",
+  "tagline": "",
+  "version": "",
+  "updateDate": "",
+  "minecraft": "",
+  "downloads": "0",
+  "reviews": "0",
+  "updatedCounts": "",
+  "border": "",
+  "thumbnail": "",
+  "alt": "",
+  "desc": "",
+  "overview": "<div style='textAlign:center'></div><br /><b></b> is a Minecraft  plugin that adds ",
+  "features": "<ul><li> </li><li> </li><li> </li><li> </li><li> </li></ul>​",
+  "updateLog": [
+    {
+      "version": "",
+      "date": "",
+      "new": "Initial release!<br /><ul style='textAlign:left'></ul>",
+      "fixes": "N/A",
+      "image": "",
+      "toggleAccordion": {
+        "title": "",
+        "body": "",
+        "variant": "",
+        "customMode": ""
       }
-    ],
-    "howToUse": [
-      {
-        "title": "commands",
-        "icon": "terminal",
-        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\"> </div><br />To <u> </u>, use:<br /><div id=\"q\"> </div><br />",
-        "image": "",
-        "toggleAccordion": {
-          "title": "",
-          "body": "",
-          "variant": "",
-          "customMode": ""
-        }
-      },
-      {
-        "title": "config",
-        "icon": "sliders",
-        "body": "Defaults for your players can be set using the config file.",
-        "image": "",
-        "toggleAccordion": {
-          "title": "Looking for the default generated config file?",
-          "body": "To view the generated config file, you can go <a href=\" \" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>.",
-          "variant": "spoilerButton",
-          "customMode": "light"
-        }
-      },
-      {
-        "title": "permissions",
-        "icon": "user-pen",
-        "body": "By default, all players may  <br />However, this can be changed by altering the config:<br /><div id=\"q\"> <s> </s>  </div>Then, players will need the <u> </u> permission to use  .<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />",
-        "image": "",
-        "toggleAccordion": {
-          "title": "",
-          "body": "",
-          "variant": "",
-          "customMode": ""
-        }
+    }
+  ],
+  "howToUse": [
+    {
+      "title": "commands",
+      "icon": "terminal",
+      "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\"> </div><br />To <u> </u>, use:<br /><div id=\"q\"> </div><br />",
+      "image": "",
+      "toggleAccordion": {
+        "title": "",
+        "body": "",
+        "variant": "",
+        "customMode": ""
       }
-    ],
-    "docsLink": "https://mikalooloo.bitbucket.io/",
-    "codeLink": "https://github.com/mikalooloo/",
-    "spigotLink": "https://www.spigotmc.org/resources/"
-  }
-]
+    },
+    {
+      "title": "config",
+      "icon": "sliders",
+      "body": "Defaults for your players can be set using the config file.",
+      "image": "",
+      "toggleAccordion": {
+        "title": "Looking for the default generated config file?",
+        "body": "To view the generated config file, you can go <a href=\" \" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>.",
+        "variant": "spoilerButton",
+        "customMode": "light"
+      }
+    },
+    {
+      "title": "permissions",
+      "icon": "user-pen",
+      "body": "By default, all players may  <br />However, this can be changed by altering the config:<br /><div id=\"q\"> <s> </s>  </div>Then, players will need the <u> </u> permission to use  .<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />",
+      "image": "",
+      "toggleAccordion": {
+        "title": "",
+        "body": "",
+        "variant": "",
+        "customMode": ""
+      }
+    }
+  ],
+  "docsLink": "https://mikalooloo.bitbucket.io/",
+  "codeLink": "https://github.com/mikalooloo/",
+  "spigotLink": "https://www.spigotmc.org/resources/"
+}
