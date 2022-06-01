@@ -1,0 +1,52 @@
+[
+  {
+    "factId": "0",
+    "fact": "Black-capped chickadees are small white and black birds that are named after their distinctive call \"chickadee-dee-dee\", where the number of \"dee\"s are increased when they feel more alarmed.",
+    "source": "https://www.allaboutbirds.org/guide/Black-capped_Chickadee/sounds"
+  },
+  {
+    "factId": "1",
+    "fact": "Red-tailed hawks often hunt by perching in trees or on poles, sitting and waiting for prey.",
+    "source": "https://www.researchgate.net/publication/259438924_Perch_use_and_hunting_behavior_of_Red-tailed_Hawks"
+  },
+  {
+    "factId": "2",
+    "fact": "Leave No Trace is an important guideline to follow when spending time outdoors. One of these principles is about leaving what you find. To prevent disturbing the area, don't take rocks or plants, introduce non-native species, and build structures.",
+    "source": "https://www.nps.gov/articles/leave-no-trace-seven-principles.htm"
+  },
+  {
+    "factId": "3",
+    "fact": "Pigs don't have many sweat glands for their large size, so they work around this by regulating their internal temperature by finding cool water or mud.",
+    "source": "https://4hanimalscience.rutgers.edu/2019/08/10/1745/"
+  },
+  {
+    "factId": "4",
+    "fact": "For cats and humans, the parts of the brain that control emotion are almost identical.",
+    "source": "https://cvm.ncsu.edu/15-facts-for-national-cat-day/"
+  },
+  {
+    "factId": "5",
+    "fact": "Dr. Joy Buolamwini is a computer scientist and digital activist who introduces herself as a poet of code, daughter of art and science. She is the founder of the Algorithmic Justice League which works to raise awareness about biased artificial intelligence.",
+    "source": "https://poetofcode.com/about/"
+  },
+  {
+    "factId": "6",
+    "fact": "Dr. Shani B. Daily is a Electrical and Computer Engineering professor of practice at Duke University. She brought together machine learning and theories of human learning and constructionism to help improve teenaged girls' needs and communities.",
+    "source": "https://www.shanibphd.com/about"
+  },
+  {
+    "factId": "7",
+    "fact": "Lyndsey Scott currently splits her time between acting and software engineering and was the first African-American model to ever land an exclusive contract with Calvin Klein.",
+    "source": "https://www.lyndseyscott.com/bio"
+  },
+  {
+    "factId": "8",
+    "fact": "1/4 of the bones in your body are in your feet.",
+    "source": "https://health.ucsd.edu/news/features/pages/2017-02-24-listicle-feet-facts.aspx"
+  },
+  {
+    "factId": "9",
+    "fact": "In a tarot card deck, there are usually 22 Major Arcana cards, numbered from 0 to 21.",
+    "source": "https://en.wikipedia.org/wiki/Major_Arcana"
+  }
+]
