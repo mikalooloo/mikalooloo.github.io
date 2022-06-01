@@ -19,7 +19,7 @@
       {
         "version": "v1.0",
         "date": "May 14, 2022",
-        "new": "Initial release!<br /><ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict usage of in-game commands</li></ul>",
+        "new": "Initial release!<br /><ul style={{\"textAlign\":\"left\"}}><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict usage of in-game commands</li></ul>",
         "fixes": "N/A"
       }
     ],
