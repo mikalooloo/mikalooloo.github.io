@@ -13,7 +13,7 @@
     "thumbnail": "0-v1.0.png",
     "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar",
     "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
-    "overview": "<div style=\"textAlign:center\">Never get lost again!</div><br /><b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! The action bar appears upon movement and fades away after a few seconds of no movement.",
+    "overview": "<div style='textAlign:center'>Never get lost again!</div><br /><b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! The action bar appears upon movement and fades away after a few seconds of no movement.",
     "features": "<ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict usage of in-game commands</li></ul>​",
     "updateLog": [
       {
