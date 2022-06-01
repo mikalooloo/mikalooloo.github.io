@@ -7,26 +7,38 @@
     "minecraft": "1.18",
     "border": "warning",
     "thumbnail": "0-v1.0.png",
-    "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar", 
+    "alt": "X, Y, and Z coordinates and facing direction appear above the Minecraft hotbar",
     "desc": "Adds a customizable action bar that includes your coordinates and facing direction!",
     "overview": "Never get lost again! <b>Mika's Directional</b> is a Minecraft 1.18 plugin that adds a customizable action bar that includes your coordinates and facing direction! The action bar appears upon movement and fades away after a few seconds of no movement.",
     "featuresTitle": "Customizations and features include:",
     "features": "<ul><li> Enabling or disabling the coordinates and/or facing direction</li><li> Changing the color of the labels and values</li><li> Changing server-wide defaults for the above</li><li>In-game commands have tab prediction</li><li>Optional permissions to restrict usage of in-game commands</li></ul>​",
+    "updateLog": [
+      {
+        "version": "v1.0",
+        "new": "Initial release!",
+        "fixes": ""
+      }
+    ],
     "howToUse": [
       {
-        "title": "commands", 
+        "title": "commands",
         "icon": "terminal",
-        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div>*Only opped players may use by default.<br />", 
+        "body": "To <u>view the commands</u> available to you, use:<br /><div id=\"q\">/md</div><br />To <u>enable or disable a feature</u>, use:<br /><div id=\"q\">/md toggle [coords/direction/both]</div><br />To <u>change the color</u> of the labels or the values, use:<br /><div id=\"q\">/md setColor [labels/values] [named color/hex code]</div><br />To <u>reload the config</u>*, use:<br /><div id=\"q\">/md reload</div>*Only opped players may use by default.<br />",
         "image": "0-v1.0-commands.png"
       },
       {
-        "title": "config", 
+        "title": "config",
         "icon": "sliders",
         "body": "Defaults for your players can be set using the config file.",
-        "toggleAccordion": { "title": "Looking for the default generated config file?", "body": "To view the generated config file, you can go <a href=\"https://github.com/mikalooloo/MikaDirectional/blob/master/src/main/resources/config.yml\" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>.", "variant": "spoilerButton", "customMode": "light" }
+        "toggleAccordion": {
+          "title": "Looking for the default generated config file?",
+          "body": "To view the generated config file, you can go <a href=\"https://github.com/mikalooloo/MikaDirectional/blob/master/src/main/resources/config.yml\" target=\"_blank\" ref=\"noopener noreferrer\">see it on the GitHub here</a>.",
+          "variant": "spoilerButton",
+          "customMode": "light"
+        }
       },
       {
-        "title": "permissions", 
+        "title": "permissions",
         "icon": "user-pen",
         "body": "By default, all players may customize the appearance of their action bar through /md toggle and /md setColor.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedUserPerms: <s>false</s> true</div>Then, players will need the <u>MikaDirectional.User</u> permission to use /md, /md toggle, and /md setColor.<br />A good resource for setting permissions is <a href=\"https://luckperms.net/\" target=\"_blank\" ref=\"noopener noreferrer\">LuckPerms</a>.<br /><br />By default, only opped playeres may reload the config through /md reload.<br />However, this can be changed by altering the config:<br /><div id=\"q\">NeedReloadPerms: <s>true</s> false</div>Then, players will no longer need to be opped or have the <u>MikaDirectional.Reload</u> permission to use /md reload."
       }
