@@ -64,10 +64,10 @@ export default function MCAboutMe() {
               <tr><th>Table of Contents</th></tr>
             </thead>
             <tbody className={darkMode ? "dark-linkText" : "light-linkText"}>
-              <tr><td><Link to="#overview">overview</Link></td></tr>
-              <tr><td><Link to="#goals">goals</Link></td></tr>
-              <tr><td><Link to="#interests">interests</Link></td></tr>
-              <tr><td><Link to="#contact">contact me</Link></td></tr>
+              <tr><td><Link to="#overview"><FontAwesomeIcon icon={solid("face-smile")} />&nbsp;&nbsp;overview</Link></td></tr>
+              <tr><td><Link to="#dreams"><FontAwesomeIcon icon={solid("cloud-moon")} />&nbsp;&nbsp;dreams</Link></td></tr>
+              <tr><td><Link to="#interests"><FontAwesomeIcon icon={solid("circle-exclamation")} />&nbsp;&nbsp;interests</Link></td></tr>
+              <tr><td><Link to="#contact"><FontAwesomeIcon icon={solid("envelope")} />&nbsp;&nbsp;contact me</Link></td></tr>
             </tbody>
           </Table>
         </Col>
@@ -76,7 +76,7 @@ export default function MCAboutMe() {
 
       {/* GOALS */}
 
-      <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="goals" tabIndex="-1" /></div>
+      <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="dreams" tabIndex="-1" /></div>
       <div className="goals">
         <h1 className="sectionTitle">
           dreams <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
@@ -111,19 +111,19 @@ export default function MCAboutMe() {
             <Col sm={4}>
               <ListGroup style={{ "textAlign": "center" }}>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("code")}>
-                  coding
+                  <FontAwesomeIcon icon={solid("code")} />&nbsp;&nbsp;coding&nbsp;&nbsp;<FontAwesomeIcon icon={solid("code")} />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("birds")}>
-                  birds
+                  <FontAwesomeIcon icon={solid("crow")} flip="horizontal" />&nbsp;&nbsp;birds&nbsp;&nbsp;<FontAwesomeIcon icon={solid("crow")} flip="horizontal" />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("justice")}>
-                  social justice
+                  <FontAwesomeIcon icon={solid("users")} />&nbsp;&nbsp;social justice&nbsp;&nbsp;<FontAwesomeIcon icon={solid("users")} />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("video")}>
-                  video games
+                  <FontAwesomeIcon icon={solid("gamepad")} />&nbsp;&nbsp;video games&nbsp;&nbsp;<FontAwesomeIcon icon={solid("gamepad")} />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("tabletop")}>
-                  tabletop games
+                  <FontAwesomeIcon icon={solid("dice-five")} />&nbsp;&nbsp;tabletop games&nbsp;&nbsp;<FontAwesomeIcon icon={solid("dice-five")} />
                 </ListGroup.Item>
               </ListGroup>
             </Col>
