@@ -122,8 +122,8 @@ export default function Plugin(props) {
               <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
             </Stack>
             <Stack direction="horizontal" style={{ "justifyContent": "center", "paddingTop": "1%" }} gap={3}>
-              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>15&nbsp;&nbsp;downloads</Badge>
-              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>0&nbsp;&nbsp;ratings</Badge>
+              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>{plugin.downloads ? plugin.downloads : "0"}&nbsp;&nbsp;downloads</Badge>
+              <Badge pill bg={darkMode ? "light" : "dark"} text={darkMode ? "dark" : "light"}>{plugin.ratings ? plugin.ratings : "0"}&nbsp;&nbsp;ratings</Badge>
             </Stack>
           </div>
 
@@ -141,7 +141,7 @@ export default function Plugin(props) {
                 <Col style={{ "paddingTop": "6%", "paddingRight": "3%" }}>
                   <StringToHTML string={plugin.overview} darkMode={darkMode} /><br /><br />
                   <h5 style={{ "textAlign": "center" }}><FontAwesomeIcon icon={solid("crow")} size="xl" /> FEATURES <FontAwesomeIcon icon={solid("crow")} size="xl" flip="horizontal" /> </h5>
-                  <div style={{ "textAlign": "center", "paddingTop": "1%" }}><StringToHTML string={plugin.features} darkMode={darkMode} /></div>
+                  <div style={{ "textAlign": "center", "paddingTop": "1%", "listStylePosition": "inside" }}><StringToHTML string={plugin.features} darkMode={darkMode} /></div>
                 </Col>
                 <Col xs={5}>
                   <Table variant={darkMode ? "dark" : "light"} style={{ "textAlign": "center" }}>
@@ -216,7 +216,7 @@ export default function Plugin(props) {
               <FontAwesomeIcon icon={solid("crow")} size="lg" /> how to install
               <BackUpArrow />
             </h1>
-            <PluginInstall name={plugin.name} spigotLink={plugin.spigotLink} />
+            <PluginInstall name={plugin.name} spigotLink={plugin.spigotLink} darkMode={darkMode} />
           </div>
 
           {/* HOW TO USE */}

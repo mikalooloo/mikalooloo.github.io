@@ -1,6 +1,5 @@
 import "./pg-plugin.css";
-import React, { useContext } from "react";
-import { ThemeContext } from "../../theme";
+import React from "react";
 import PluginDownload from "./plugin-btn-download";
 // bootstrap
 import Tabs from "react-bootstrap/Tabs";
@@ -13,13 +12,11 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 export default function PluginInstall(props) {
   let name = props.name ? props.name : "";
   let spigotLink = props.spigotLink ? props.spigotLink : "";
-  // theme
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.darkMode;
+  let darkMode = props.darkMode ? props.darkMode : true;
 
   const downloadSpiel = () => {
     return (
-      <div>
+      <div className={darkMode ? "dark-linkText" : "light-linkText"}>
         First, you'll need to download the desired plugin. This can be done through Spigot. To get there, you can:<br /><br />
         <ul style={{ "display": "inline-block", "textAlign": "left" }}>
           <li>Click on the download button above {`(`}external link to Spigot{`)`}</li>
