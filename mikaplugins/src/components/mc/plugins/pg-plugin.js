@@ -88,7 +88,7 @@ export default function Plugin(props) {
   // get the right plugin to load
   React.useEffect(() => {
     if (plugins) setPlugin(plugins[Number(pluginID)]);
-  }, [plugins, pluginID]);
+  }, [plugins, pluginID, plugin]);
 
   // RENDER
   return (

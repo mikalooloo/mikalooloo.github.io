@@ -155,4 +155,48 @@
   background-color: #f0a3d2;
 }
 
+.dark-list {
+  box-shadow: 0 0 5px #4b4b4b;
+  color: white;
+  background-color: rgb(31, 37, 43);
+  border-color: rgb(40, 40, 44);
+  border-radius: 0px;
+}
+.dark-list:hover {
+  box-shadow: 0 0 15px 1px #4b4b4b;
+  color: white;
+  background-color: rgb(42, 48, 54);
+}
+.dark-list:focus {
+  box-shadow: 0 0 10px 1px rgb(36, 36, 36);
+  color: white;
+  background-color: rgb(42, 48, 54);
+}
+.dark-list.active {
+  box-shadow: 0 0 10px 1px rgb(78, 78, 78);
+  color: white;
+  background-color: rgb(44, 48, 51);
+}
+
+.light-list {
+  box-shadow: 0 0 5px #C68484;
+  color: #260000;
+  background-color: #faeaea;
+}
+.light-list:hover {
+  box-shadow: 0 0 15px 1px #C68484;
+  color: #310707;
+  background-color: #faf0f0;
+}
+.light-list:focus {
+  box-shadow: 0 0 10px 1px #bd6767;
+  color: #251313;
+  background-color: #faf0f0;
+}
+.light-list.active {
+  box-shadow: 0 0 10px 1px #bd6767;
+  color: #251313;
+  background-color: #fdf2f2;
+}
+
 /*# sourceMappingURL=pg-plugin.css.map */
