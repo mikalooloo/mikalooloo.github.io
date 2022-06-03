@@ -32,14 +32,17 @@ export default function MCBase(props) {
   const [plugins, setPlugins] = React.useState([]);
 
   React.useEffect(() => {
-    const nums = Array.apply(null, Array(10)).map(function (currentValue, index) { return index; });
-
-    Promise.all(nums.map(i =>
-      axiosInstance.get(`/public/plugins/${i}.json`)
-        .then(response => {
-          setPlugins(plugins.push(response.data));
-        })));
-  }, [plugins]);
+    const promises = [...Array(1).keys()].map(item => {
+      return axiosInstance.get(`/public/plugins/${item}.json`);
+    });
+    const temp = [];
+    Promise.all(promises).then(responses => {
+      responses.map(response => {
+        return temp.push(response.data);
+      })
+    });
+    setPlugins(temp);
+  }, []);
 
   return (
     <div className={darkMode ? "text-white" : "text-dark"}>

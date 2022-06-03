@@ -26,8 +26,8 @@ export default function StringToHTML(props) {
 
       // adds custom link coloring
       if (domNode.name === "a") {
-        const props = attributesToProps(domNode.attribs);
-        return props.darkMode ? <span className="dark-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span> : <span className="light-linkText"><a {...props}>{domToReact(domNode.children, parseOptions)}</a></span>;
+        const linkProps = attributesToProps(domNode.attribs);
+        return props.darkMode ? <span className="dark-linkText"><a {...linkProps}>{domToReact(domNode.children, parseOptions)}</a></span> : <span className="light-linkText"><a {...linkProps}>{domToReact(domNode.children, parseOptions)}</a></span>;
       }
     }
   };

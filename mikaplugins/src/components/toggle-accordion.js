@@ -16,7 +16,7 @@ export default function ToggleAccordion(props) {
   const theme = useContext(ThemeContext);
   const darkMode = theme.darkMode;
 
-  const ToggleButton = ({children, eventKey}) => {
+  const ToggleButton = ({ children, eventKey }) => {
     return (
       <Button
         className={variant + (customMode ? ("-" + customMode) : (darkMode ? "-dark" : "-light"))}

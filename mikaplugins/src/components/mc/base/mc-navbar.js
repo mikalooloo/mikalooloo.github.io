@@ -14,11 +14,10 @@ export default function MCNavbar(props) {
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav style={{ "paddingLeft": "39%", "paddingRight": "39%" }}>
+          <Nav style={{ "margin": "0 auto" }}>
             <Nav.Link as={NavLink} to="/minecraft" end>Home <span className="visually-hidden">(current)</span></Nav.Link>
             <Nav.Link as={NavLink} to="/minecraft/plugins">Plugins</Nav.Link>
             <Nav.Link as={NavLink} to="/minecraft/about-me">About Me</Nav.Link>
-            <Nav.Link as={NavLink} to="/minecraft/help">Help</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

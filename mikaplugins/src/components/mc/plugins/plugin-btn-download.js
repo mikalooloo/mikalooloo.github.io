@@ -8,7 +8,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 // props:
 // link (assumed given)
 // download name (assumed given)
-export default function MCDownload(props) {
+export default function PluginDownload(props) {
   let link = props.link;
   let name = props.name;
 

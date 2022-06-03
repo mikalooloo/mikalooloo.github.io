@@ -16,7 +16,10 @@ export default function App(props) {
       setTimeout(() => {
         const id = hash.replace("#", "");
         const element = document.getElementById(id);
-        if (element) element.scrollIntoView();
+        if (element) {
+          element.focus(); // for keyboard accessibility
+          element.scrollIntoView();
+        }
       }, 0);
     }
 

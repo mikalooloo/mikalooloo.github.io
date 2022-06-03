@@ -1,13 +1,13 @@
-import "./mc-plugin.css";
+import "./pg-plugins-list";
 import React from "react";
 import { useOutletContext, useParams, Link } from "react-router-dom";
 import { ThemeContext } from "../../theme";
 import ToggleAccordion from "../../toggle-accordion";
 import StringToHTML from "../../string-to-html";
-import MCInstall from "./mc-install";
-import MCReportBug from "./mc-report-bug";
-import MCQuestion from "./mc-question";
-import MCFeature from "./mc-feature";
+import PluginInstall from "./plugin-install";
+import PluginReport from "./plugin-report";
+import PluginQuestion from "./plugin-question";
+import PluginFeature from "./plugin-feature";
 // bootstrap
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 
-export default function MCPlugin(props) {
+export default function Plugin(props) {
   // loading the correct plugin
   const [plugins] = useOutletContext();
   const [plugin, setPlugin] = React.useState(null);
@@ -74,7 +74,17 @@ export default function MCPlugin(props) {
     else setFeatherIcon(customIcons["feather-pointed"]);
   };
 
-  // HOOKS
+  // back up arrows
+  const BackUpArrow = () => {
+    // this function is so that you are sent to "#overview" even if your current URL is "#overview"
+    const resetHash = () => {
+      window.location.hash = "#overview";
+    }
+    return (
+      <span className={darkMode ? "dark-linkArrow" : "light-linkArrow"}>&nbsp;&nbsp;<Link to="#overview" onClick={resetHash}><FontAwesomeIcon icon={solid("caret-up")} /></Link></span>
+    );
+  }
+
   // get the right plugin to load
   React.useEffect(() => {
     if (plugins) setPlugin(plugins[Number(pluginID)]);
@@ -120,8 +130,8 @@ export default function MCPlugin(props) {
           {/* OVERVIEW */}
 
           <div className="iconDivider" style={{ "paddingTop": "6%" }}>
-            <FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} transform={{ rotate: 10 }} flip="horizontal" id="overview" />
-            <FontAwesomeIcon icon={featherIcon} size="xl" onClick={swapFeatherIcon} transform={{ rotate: -50 }} />
+            <FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} transform={{ rotate: 10 }} flip="horizontal" />
+            <FontAwesomeIcon icon={featherIcon} size="xl" onClick={swapFeatherIcon} transform={{ rotate: -50 }} id="overview" tabIndex="-1" />
             <FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} transform={{ rotate: 10 }} />
           </div>
 
@@ -159,9 +169,12 @@ export default function MCPlugin(props) {
 
           {/* UPDATE LOG */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="update" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="update" tabIndex="-1" /></div>
           <div className="updateLog">
-            <h1 className="sectionTitle">update log <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+            <h1 className="sectionTitle">
+              update log <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
+              <BackUpArrow />
+            </h1>
             <Container>
               <Accordion defaultActiveKey={updateLogHTML[1] ? updateLogHTML[0].version : null} className={darkMode ? "gray-accordion" : "pink-accordion"} style={{ "width": "30rem", "margin": "0 auto", "paddingRight": "3%", "textAlign": "left" }}>
                 {updateLogHTML.map(item => {
@@ -197,16 +210,22 @@ export default function MCPlugin(props) {
 
           {/* HOW TO INSTALL */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="install" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="install" tabIndex="-1" /></div>
           <div className="howToInstall">
-            <h1 className="sectionTitle"><FontAwesomeIcon icon={solid("crow")} size="lg" /> how to install</h1>
-            <MCInstall name={plugin.name} spigotLink={plugin.spigotLink} />
+            <h1 className="sectionTitle">
+              <FontAwesomeIcon icon={solid("crow")} size="lg" /> how to install
+              <BackUpArrow />
+            </h1>
+            <PluginInstall name={plugin.name} spigotLink={plugin.spigotLink} />
           </div>
 
           {/* HOW TO USE */}
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="use" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="use" tabIndex="-1" /></div>
           <div className="howToUse">
-            <h1 className="sectionTitle">how to use <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+            <h1 className="sectionTitle">
+              how to use <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
+              <BackUpArrow />
+            </h1>
             <Container>
               {plugin && howToUseHTML ?
                 <Accordion defaultActiveKey={howToUseHTML[0].title} className={darkMode ? "gray-accordion" : "pink-accordion"} style={{ "width": "50rem", "margin": "0 auto", "paddingRight": "3%", "textAlign": "left" }}>
@@ -227,7 +246,7 @@ export default function MCPlugin(props) {
                           {item.toggleAccordion ?
                             <div className="toggleAccordion">
                               <br />
-                              <ToggleAccordion title={item.toggleAccordion.title} body={<StringToHTML string={item.toggleAccordion.body} darkMode={darkMode} />} variant={item.toggleAccordion.variant} customMode={item.toggleAccordion.customMode} />
+                              <ToggleAccordion title={item.toggleAccordion.title} body={<StringToHTML string={item.toggleAccordion.body} darkMode={darkMode} />} variant={item.toggleAccordion.variant} />
                             </div> : ""}
                           <br />
                         </Accordion.Body>
@@ -244,9 +263,12 @@ export default function MCPlugin(props) {
 
           {/* CREDITS */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="credits" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="credits" tabIndex="-1" /></div>
           <div className="credits">
-            <h1 className="sectionTitle"><FontAwesomeIcon icon={solid("crow")} size="lg" /> credits</h1>
+            <h1 className="sectionTitle">
+              <FontAwesomeIcon icon={solid("crow")} size="lg" /> credits
+              <BackUpArrow />
+            </h1>
             <div className="creditsList" style={{ "textAlign": "center" }}>
               <ProgressBar striped animated className={darkMode ? "dark-bar" : "light-bar"} now={100} />
               <h4 style={{ "paddingTop": "2%" }}>plugin creator<br /></h4>
@@ -260,9 +282,12 @@ export default function MCPlugin(props) {
 
           {/* DOCUMENTATION */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="docs" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="docs" tabIndex="-1" /></div>
           <div className="documentation">
-            <h1 className="sectionTitle">documentation <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+            <h1 className="sectionTitle">
+              documentation <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
+              <BackUpArrow />
+            </h1>
             <p style={{ "textAlign": "center", "paddingBottom": "1%" }}>Looking to view the documentation or the source code of this plugin? Look no further!</p>
             <Stack direction="horizontal" gap={4} style={{ "justifyContent": "center", "paddingRight": "2%" }}>
               <a href={plugin.docsLink} target="_blank" rel="noopener noreferrer">
@@ -276,32 +301,38 @@ export default function MCPlugin(props) {
 
           {/* HELP */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="help" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="help" tabIndex="-1" /></div>
           <div className="help">
-            <h1 className="sectionTitle"><FontAwesomeIcon icon={solid("crow")} size="lg" /> help</h1>
+            <h1 className="sectionTitle">
+              <FontAwesomeIcon icon={solid("crow")} size="lg" /> help
+              <BackUpArrow />
+            </h1>
             <p className={darkMode ? "dark-linkText" : "light-linkText"} style={{ "textAlign": "center" }}>
               Need some help with this plugin? You're in the right place!<br />If the following isn't helpful, feel free to <Link to="/minecraft/contact-me">contact me</Link>!
             </p>
-            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="bug" /></div>
+            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="bug" tabIndex="-1" /></div>
 
             <h3 className="sectionTitle">report a bug</h3>
-            <MCReportBug bugLink={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Abug"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
-            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="question" /></div>
+            <PluginReport bugLink={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Abug"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
+            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="question" tabIndex="-1" /></div>
 
             <h3 className="sectionTitle">ask a question</h3>
-            <MCQuestion questionLinkClosed={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aclosed"} questionLinkOpened={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aopen"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
-            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="feature" /></div>
+            <PluginQuestion questionLinkClosed={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aclosed"} questionLinkOpened={plugin.codeLink + "issues?q=is%3Aissue+label%3Aquestion+is%3Aopen"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
+            <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="feature" tabIndex="-1" /></div>
 
             <h3 className="sectionTitle">suggest a feature&nbsp;&nbsp;<FontAwesomeIcon icon={solid("egg")} size="lg" /></h3>
-            <MCFeature featureLinkClosed={plugin.codeLink + "issues?q=is%3Aissue+label%3Aenhancement+label%3Awontfix+is%3Aclosed"} featureLinkOpened={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
+            <PluginFeature featureLinkClosed={plugin.codeLink + "issues?q=is%3Aissue+label%3Aenhancement+label%3Awontfix+is%3Aclosed"} featureLinkOpened={plugin.codeLink + "issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement"} createLink={plugin.codeLink + "issues/new/choose"} darkMode={darkMode} />
 
           </div>
 
           {/* SUPPORT */}
 
-          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="support" /></div>
+          <div className="iconDivider"><FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} id="support" tabIndex="-1" /></div>
           <div className="support" style={{ "textAlign": "center" }}>
-            <h1 className="sectionTitle" style={{ "paddingLeft": "2%" }}>support <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" /></h1>
+            <h1 className="sectionTitle" style={{ "paddingLeft": "2%" }}>
+              support <FontAwesomeIcon icon={solid("crow")} size="lg" flip="horizontal" />
+              <BackUpArrow />
+            </h1>
             <Stack gap={3}>
               <p>Want to help support me? I really appreciate it! Here are some things you can do: </p>
               <Stack gap={3} direction="horizontal" style={{ "justifyContent": "center" }}>
@@ -323,7 +354,7 @@ export default function MCPlugin(props) {
             <FontAwesomeIcon icon={featherIcon} size="xl" onClick={swapFeatherIcon} transform={{ rotate: -50 }} flip="vertical" />
             <FontAwesomeIcon icon={featherIcon} size="lg" onClick={swapFeatherIcon} transform={{ rotate: 10 }} flip="vertical" />
           </div>
-        </Container>
+        </Container >
         :
         <div style={{ "textAlign": "center" }}>
           <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin /> Loading <FontAwesomeIcon icon={solid("asterisk")} size="lg" spin />
@@ -332,15 +363,3 @@ export default function MCPlugin(props) {
     </Container >
   );
 }
-
-// Overview
-// Update Log
-// How to Install
-// How to Use
-// Download
-// Credits
-// Documentation
-// Help ->
-// Report Bug
-// Ask Question
-// Suggest Feature

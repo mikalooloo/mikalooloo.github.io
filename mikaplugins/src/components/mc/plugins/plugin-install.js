@@ -1,7 +1,7 @@
-import "./mc-plugin.css";
+import "./pg-plugin.css";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../theme";
-import MCDownload from "./mc-btn-download";
+import PluginDownload from "./plugin-btn-download";
 // bootstrap
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
@@ -10,33 +10,21 @@ import Accordion from "react-bootstrap/Accordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
-export default function MCInstall(props) {
+export default function PluginInstall(props) {
   let name = props.name ? props.name : "";
   let spigotLink = props.spigotLink ? props.spigotLink : "";
   // theme
   const theme = useContext(ThemeContext);
   const darkMode = theme.darkMode;
 
-  // if no spigot link, give a generic download spiel
-  // if a link is given, give a specific download spiel
   const downloadSpiel = () => {
     return (
       <div>
-      First, you'll need to download the desired plugin. This can be done through Spigot. To get there, you can:<br /><br />
-              
-        {spigotLink === "" ? 
-          <ul style={{"display":"inline-block","textAlign":"left"}}>
-            <li>Click on the plugin's download button on this site {`(`}external link to its Spigot page{`)`} </li>
-            <li>Or go to my Spigot resources link 
-              <a href={"https://www.spigotmc.org/resources/authors/mikalooloo.1570246/"} target="_blank" rel="noopener noreferrer">https://www.spigotmc.org/resources/authors/mikalooloo.1570246/</a>
-              directly to find the plugin's Spigot page from there</li>
-          </ul>
-        :
-        <ul style={{"display":"inline-block","textAlign":"left"}}>
+        First, you'll need to download the desired plugin. This can be done through Spigot. To get there, you can:<br /><br />
+        <ul style={{ "display": "inline-block", "textAlign": "left" }}>
           <li>Click on the download button above {`(`}external link to Spigot{`)`}</li>
           <li>Or go to the link <a href={spigotLink} target="_blank" rel="noopener noreferrer">{spigotLink}</a> directly</li>
-        </ul>}
-
+        </ul>
         <br />Once on Spigot, you should see a "Download Now" button to the right of the title. Click that and you'll be good to go!
       </div>
     );
@@ -44,14 +32,14 @@ export default function MCInstall(props) {
 
   return (
     <div>
-      {name && spigotLink ? <MCDownload link={spigotLink} name={name}/> : <div />}
-      <Tabs 
-        defaultActiveKey="basic" 
-        fill 
-        transition={false} 
-        style={{"backgroundColor":"white", "borderTopLeftRadius":"5px", "borderTopRightRadius":"5px"}}
+      <PluginDownload link={spigotLink} name={name} />
+      <Tabs
+        defaultActiveKey="basic"
+        fill
+        transition={false}
+        style={{ "backgroundColor": "white", "borderTopLeftRadius": "5px", "borderTopRightRadius": "5px" }}
         className={darkMode ? "gray-tabs" : "pink-tabs"}
-        >
+      >
         <Tab eventKey="basic" title="Basic">
           <Accordion className={darkMode ? "gray-accordion" : "pink-accordion"}>
             <Accordion.Item eventKey="1">
@@ -70,9 +58,9 @@ export default function MCInstall(props) {
               <Accordion.Header>step 3: &nbsp;<FontAwesomeIcon icon={solid("server")} />&nbsp; run server</Accordion.Header>
               <Accordion.Body>
                 Now, run your server like normal. Once it's fully loaded, the plugin should be installed!<br />
-                Inside your plugins folder, there should now be a new folder that is named "{name === "" ? "the same as the plugin you've installed" : name}" or something similar.<br />
+                Inside your plugins folder, there should now be a new folder that is named "{name}" or something similar.<br />
                 Any relevant config files will be in there! After editing a config file, either restart your server or use a reload command for it to take effect.<br /><br />
-                
+
                 If something isn't working right, first try and troubleshoot on your own what's wrong - if you're stumped, feel free to contact me for help!
               </Accordion.Body>
             </Accordion.Item>
@@ -116,11 +104,11 @@ export default function MCInstall(props) {
             </Accordion.Item>
           </Accordion>
         </Tab>
-        
+
         <Tab eventKey="shockbyte" title="Shockbyte">
           <Accordion className={darkMode ? "gray-accordion" : "pink-accordion"}>
             <Accordion.Item eventKey="1">
-            <Accordion.Header>step 1: &nbsp;<FontAwesomeIcon icon={solid("circle-down")} />&nbsp; download</Accordion.Header>
+              <Accordion.Header>step 1: &nbsp;<FontAwesomeIcon icon={solid("circle-down")} />&nbsp; download</Accordion.Header>
               <Accordion.Body>
                 {downloadSpiel()}
               </Accordion.Body>

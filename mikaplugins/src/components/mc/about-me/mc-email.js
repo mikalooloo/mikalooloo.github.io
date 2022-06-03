@@ -1,4 +1,4 @@
-import "../plugins/mc-plugin.css";
+import "../plugins/pg-plugin.css";
 import React from "react";
 import { ThemeContext } from "../../theme";
 import { Stack, ToggleButton, Button } from "react-bootstrap";

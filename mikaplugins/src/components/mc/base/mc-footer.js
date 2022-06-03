@@ -25,7 +25,9 @@ export default function MCFooter(props) {
     axiosInstance.get("/public/fun-facts.json")
       .then(response => {
         // sorting ensures no repeats happen in the same session until all have been seen
-        setFunFacts(response.data.sort((a, b) => 0.5 - Math.random()));
+        setFunFacts(response.data.map(value => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value));
       });
   }, []);
 
@@ -40,7 +42,9 @@ export default function MCFooter(props) {
     setFunFact(funFacts[factIndex]);
     if (factIndex + 1 >= funFacts.length) {
       setFactIndex(0);
-      setFunFacts(funFacts.sort((a, b) => 0.5 - Math.random()));
+      setFunFacts(funFacts.map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value));
     }
     else {
       setFactIndex(factIndex + 1);
@@ -61,19 +65,19 @@ export default function MCFooter(props) {
           </Row>
           <Row>
             <Col><Link to="/minecraft/plugins/0">Mika's Directional</Link></Col>
-            <Col>Report a Bug</Col>
+            <Col><Link to="/minecraft/help/report-bug">Report a Bug</Link></Col>
             <Col><a href="https://ko-fi.com/mikalooloo" target="_blank" rel="noopener noreferrer">Send a Tip</a></Col>
-            <Col><span onClick={handleToggle} style={{ 'cursor': 'pointer' }}>{darkMode ? "Light Mode" : "Dark Mode"}</span></Col>
+            <Col><span onClick={handleToggle} onKeyDown={(e) => { if (e.key === "Enter") handleToggle() }} style={{ 'cursor': 'pointer' }} tabIndex="0">{darkMode ? "Light Mode" : "Dark Mode"}</span></Col>
           </Row>
           <Row>
             <Col></Col>
-            <Col>Suggest a Feature</Col>
-            <Col>Leave a Review</Col>
-            <Col><span onClick={handleFact} style={{ 'cursor': 'pointer' }}>Fun Fact</span></Col>
+            <Col><Link to="/minecraft/help/suggest-feature">Suggest a Feature</Link></Col>
+            <Col><Link to="/minecraft/help/leave-review">Leave a Review</Link></Col>
+            <Col><span onClick={handleFact} onKeyDown={(e) => { if (e.key === "Enter") handleFact() }} style={{ 'cursor': 'pointer' }} tabIndex="0">Fun Fact</span></Col>
           </Row>
           <Row>
             <Col></Col>
-            <Col><Link to="/minecraft/contact-me">Contact Me</Link></Col>
+            <Col><Link to="/minecraft/help/ask-question">Ask a Question</Link></Col>
             <Col><Link to="/minecraft/contact-me">Give a Compliment</Link></Col>
             <Col></Col>
           </Row>

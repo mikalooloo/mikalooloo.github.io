@@ -10,10 +10,14 @@ import App from './App';
 import RLHome from './components/rl/rl-home';
 import MCBase from './components/mc/base/mc-base';
 import MCHome from './components/mc/home/mc-home';
-import MCPlugins from './components/mc/plugins/mc-plugins';
-import MCPlugin from './components/mc/plugins/mc-plugin';
+import PluginsList from './components/mc/plugins/pg-plugins-list';
+import Plugin from './components/mc/plugins/pg-plugin';
 import MCContactMe from './components/mc/about-me/mc-contact-me';
 import MCAboutMe from './components/mc/about-me/mc-about-me';
+import ReportBug from "./components/mc/help/pg-report-bug";
+import SuggestFeature from "./components/mc/help/pg-suggest-feature";
+import AskQuestion from "./components/mc/help/pg-ask-question";
+import LeaveReview from "./components/mc/help/pg-leave-review";
 
 // Initializing Sentry
 Sentry.init({
@@ -34,10 +38,14 @@ root.render(
           <Route index element={<RLHome />} />
           <Route path="minecraft" element={<MCBase />}>
             <Route index element={<MCHome />} />
-            <Route path="plugins" element={<MCPlugins />} />
-            <Route path="plugins/:pluginID" element={<MCPlugin />} />
+            <Route path="plugins" element={<PluginsList />} />
+            <Route path="plugins/:pluginID" element={<Plugin />} />
             <Route path="about-me" element={<MCAboutMe />} />
             <Route path="contact-me" element={<MCContactMe />} />
+            <Route path="help/report-bug" element={<ReportBug />} />
+            <Route path="help/suggest-feature" element={<SuggestFeature />} />
+            <Route path="help/ask-question" element={<AskQuestion />} />
+            <Route path="help/leave-review" element={<LeaveReview />} />
           </Route>
         </Route>
       </Routes>
