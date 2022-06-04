@@ -1,4 +1,34 @@
-h1 {
+.dark-boxLabel {
+  border: 5px solid white;
+  padding: 2%;
+  letter-spacing: 5px;
+  font-size: larger;
+  min-width: 300px;
+  text-align: center;
+}
+
+.dark-boxValue {
+  border: 2px solid white;
+  border-left: 0px;
+  padding: 2%;
+  min-width: 300px;
+  text-align: center;
+}
+
+.light-boxLabel {
+  border: 5px solid rgb(0, 0, 0);
+  padding: 2%;
+  letter-spacing: 5px;
+  font-size: larger;
+  min-width: 300px;
+  text-align: center;
+}
+
+.light-boxValue {
+  border: 3px solid rgb(0, 0, 0);
+  border-left: 0px;
+  padding: 2%;
+  min-width: 300px;
   text-align: center;
 }
 

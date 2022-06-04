@@ -1,11 +1,11 @@
-import './mc-base.css'
-import React from 'react';
-import MCNavbar from './mc-navbar';
-import MCFooter from './mc-footer';
+import "./mc-base.css";
+import React from "react";
+import MCNavbar from "./mc-navbar";
+import MCFooter from "./mc-footer";
 import ErrorPopup from "../../error-popup";
 import * as Sentry from "@sentry/react";
-import { Outlet } from 'react-router-dom';
-import { ThemeContext } from '../../theme';
+import { Outlet } from "react-router-dom";
+import { ThemeContext } from "../../theme";
 import axiosInstance from "../../../apis/axios-instance";
 
 export default function MCBase(props) {

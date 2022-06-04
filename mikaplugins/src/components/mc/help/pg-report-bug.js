@@ -19,12 +19,12 @@ export default function ReportBug(props) {
       <h4>Looking to report a bug for one of my plugins? &nbsp;<FontAwesomeIcon icon={solid("gamepad")} /></h4>
       <p>
         Awesome! Find the page for that plugin here on my website and find the "Report a Bug" section -- it'll walk you through on how to do so!<br />
-        If you end up needing help, you can always <Link to="/minecraft/contact-me">Contact Me</Link>.
+        If you end up needing help, you can always <Link to="/minecraft/contact-me/help">Contact Me</Link>.
       </p>
       <h4 style={{ "paddingTop": "2%" }}>Looking to report a bug on this website? &nbsp;<FontAwesomeIcon icon={solid("arrow-pointer")} /></h4>
       <p>
         Did you find a spelling mistake or a link that goes to the wrong place? Needless to say, I appreciate you wanting to tell me!<br />
-        <Link to="/minecraft/contact-me">Contact Me</Link> and let me know where you found this error and I'll get to fixing it when I can.
+        <Link to="/minecraft/contact-me/bug">Contact Me</Link> and let me know where you found this error and I'll get to fixing it when I can.
       </p>
     </Container>
   );

@@ -78,8 +78,8 @@ export default function MCFooter(props) {
           <Row>
             <Col></Col>
             <Col><Link to="/minecraft/help/ask-question">Ask a Question</Link></Col>
-            <Col><Link to="/minecraft/contact-me">Give a Compliment</Link></Col>
-            <Col></Col>
+            <Col><Link to="/minecraft/contact-me/compliment">Give a Compliment</Link></Col>
+            <Col><Link to="/minecraft/contact-me">Contact Me</Link></Col>
           </Row>
         </Container>
         <section className={darkMode ? "dark-footer-border" : "light-footer-border"}>

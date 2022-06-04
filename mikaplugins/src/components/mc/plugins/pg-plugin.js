@@ -1,6 +1,6 @@
 import "./pg-plugins-list";
 import React from "react";
-import { useOutletContext, useParams, Link } from "react-router-dom";
+import { useOutletContext, useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { ThemeContext } from "../../theme";
 import ToggleAccordion from "../../toggle-accordion";
 import StringToHTML from "../../string-to-html";
@@ -85,10 +85,19 @@ export default function Plugin(props) {
     );
   }
 
+  // allows the back button to either take you back to your last page, or if there is no page just takes you to plugins list
+  const { key: keyLocation } = useLocation();
+
+  // if plugin cannot be found, helps redirect us 
+  const navigate = useNavigate();
+
   // get the right plugin to load
   React.useEffect(() => {
-    if (plugins) setPlugin(plugins[Number(pluginID)]);
-  }, [plugins, pluginID, plugin]);
+    if (plugins) {
+      if (typeof plugins[Number(pluginID)] === 'undefined') navigate("/minecraft/not-found");
+      setPlugin(plugins[Number(pluginID)]);
+    }
+  }, [plugins, pluginID, plugin, navigate]);
 
   // RENDER
   return (
@@ -99,7 +108,7 @@ export default function Plugin(props) {
           {/* OPENING */}
 
           <div className="opening">
-            <Link to="/minecraft/plugins">
+            <Link to={keyLocation === "default" ? "/minecraft/plugins" : -1}>
               <Button variant="secondary"><FontAwesomeIcon icon={solid("caret-left")} /> back</Button>
             </Link>
             <div style={{ "textAlign": "center", "paddingBottom": "1%" }}>

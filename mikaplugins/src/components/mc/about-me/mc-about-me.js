@@ -114,7 +114,7 @@ export default function MCAboutMe() {
                   <FontAwesomeIcon icon={solid("code")} />&nbsp;&nbsp;coding&nbsp;&nbsp;<FontAwesomeIcon icon={solid("code")} />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("birds")}>
-                  <FontAwesomeIcon icon={solid("crow")} flip="horizontal" />&nbsp;&nbsp;birds&nbsp;&nbsp;<FontAwesomeIcon icon={solid("crow")} flip="horizontal" />
+                  <FontAwesomeIcon icon={solid("crow")} />&nbsp;&nbsp;birds&nbsp;&nbsp;<FontAwesomeIcon icon={solid("crow")} flip="horizontal" />
                 </ListGroup.Item>
                 <ListGroup.Item action className={darkMode ? "dark-list" : "light-list"} onClick={() => setTab("justice")}>
                   <FontAwesomeIcon icon={solid("users")} />&nbsp;&nbsp;social justice&nbsp;&nbsp;<FontAwesomeIcon icon={solid("users")} />

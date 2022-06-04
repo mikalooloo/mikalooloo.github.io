@@ -24,7 +24,7 @@ export default function LeaveReview(props) {
         <Link to="/minecraft/help/ask-question">Ask a Question</Link>.<br /><br />
         If you do want to review a plugin, first find the page for that plugin here on my website and go to the "Support" section -- it'll bring you straight to my plugin's Spigot page, where you can leave a review.
         You can also go straight to my Spigot resources page <a href="https://www.spigotmc.org/resources/authors/mikalooloo.1570246/" target="_blank" rel="noopener noreferrer">here</a> to find the right plugin page.<br /><br />
-        If you'd like to leave a private review for just me, feel free to <Link to="/minecraft/contact-me">Contact Me</Link> instead.
+        If you'd like to leave a private review just for me, feel free to <Link to="/minecraft/contact-me/review">Contact Me</Link> instead.
       </p>
     </Container>
   );

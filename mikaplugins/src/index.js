@@ -18,6 +18,7 @@ import ReportBug from "./components/mc/help/pg-report-bug";
 import SuggestFeature from "./components/mc/help/pg-suggest-feature";
 import AskQuestion from "./components/mc/help/pg-ask-question";
 import LeaveReview from "./components/mc/help/pg-leave-review";
+import NotFound from "./components/mc/help/pg-not-found";
 
 // Initializing Sentry
 Sentry.init({
@@ -42,10 +43,12 @@ root.render(
             <Route path="plugins/:pluginID" element={<Plugin />} />
             <Route path="about-me" element={<MCAboutMe />} />
             <Route path="contact-me" element={<MCContactMe />} />
+            <Route path="contact-me/:reason" element={<MCContactMe />} />
             <Route path="help/report-bug" element={<ReportBug />} />
             <Route path="help/suggest-feature" element={<SuggestFeature />} />
             <Route path="help/ask-question" element={<AskQuestion />} />
             <Route path="help/leave-review" element={<LeaveReview />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Route>
       </Routes>

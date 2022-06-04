@@ -12,7 +12,7 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 export default function PluginInstall(props) {
   let name = props.name ? props.name : "";
   let spigotLink = props.spigotLink ? props.spigotLink : "";
-  let darkMode = props.darkMode ? props.darkMode : true;
+  let darkMode = props.darkMode;
 
   const downloadSpiel = () => {
     return (
