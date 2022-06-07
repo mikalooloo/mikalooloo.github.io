@@ -93,7 +93,7 @@ export default function Plugin(props) {
 
   // get the right plugin to load
   React.useEffect(() => {
-    if (plugins) {
+    if (plugins.length !== 0) {
       if (typeof plugins[Number(pluginID)] === 'undefined') navigate("/minecraft/not-found");
       setPlugin(plugins[Number(pluginID)]);
     }

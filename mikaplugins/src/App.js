@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './components/theme';
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function App(props) {
   const { pathname, hash } = useLocation();
@@ -27,7 +28,9 @@ export default function App(props) {
 
   return (
     <ThemeProvider>
-      <Outlet />
+      <ParallaxProvider>
+        <Outlet />
+      </ParallaxProvider>
     </ThemeProvider>
   );
 }

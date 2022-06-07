@@ -24,14 +24,15 @@ export default function MCHome(props) {
     else setFeatherIcon(solid("feather-pointed"));
   };
 
+  // get the plugins with the newest release date and the latest update date
+  const newRelease = React.useMemo(() => {
+    if (plugins.length === 0) return;
+    return plugins.reduce((a, b) => (a.originalDate > b.originalDate ? a : b));
+  }, [plugins]);
 
-  const [newRelease, setNewRelease] = React.useState();
-  const [lastUpdate, setLastUpdate] = React.useState();
-  React.useEffect(() => {
-    plugins.forEach(item => {
-      setNewRelease(plugins.reduce((a, b) => (a.originalDate > b.originalDate ? a : b)));
-      setLastUpdate(plugins.reduce((a, b) => (a.updateDate > b.updateDate ? a : b)));
-    });
+  const lastUpdate = React.useMemo(() => {
+    if (plugins.length === 0) return;
+    return plugins.reduce((a, b) => (a.updateDate > b.updateDate ? a : b));
   }, [plugins]);
 
   return (

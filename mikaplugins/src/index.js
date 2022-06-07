@@ -1,19 +1,20 @@
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.css";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import reportWebVitals from './reportWebVitals';
-import App from './App';
-import RLHome from './components/rl/rl-home';
-import MCBase from './components/mc/base/mc-base';
-import MCHome from './components/mc/home/mc-home';
-import PluginsList from './components/mc/plugins/pg-plugins-list';
-import Plugin from './components/mc/plugins/pg-plugin';
-import MCContactMe from './components/mc/about-me/mc-contact-me';
-import MCAboutMe from './components/mc/about-me/mc-about-me';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
+import reportWebVitals from "./reportWebVitals";
+// components
+import App from "./App";
+import RLHome from "./components/rl/rl-home";
+import MCBase from "./components/mc/base/mc-base";
+import MCHome from "./components/mc/home/mc-home";
+import PluginsList from "./components/mc/plugins/pg-plugins-list";
+import Plugin from "./components/mc/plugins/pg-plugin";
+import MCContactMe from "./components/mc/about-me/mc-contact-me";
+import MCAboutMe from "./components/mc/about-me/mc-about-me";
 import ReportBug from "./components/mc/help/pg-report-bug";
 import SuggestFeature from "./components/mc/help/pg-suggest-feature";
 import AskQuestion from "./components/mc/help/pg-ask-question";
@@ -30,7 +31,7 @@ Sentry.init({
 });
 
 // Initializing React
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router> {/* this is done so it can be deployed to GitHub pages*/}
@@ -38,7 +39,7 @@ root.render(
         <Route path="/" element={<App />}>
           <Route index element={<RLHome />} />
           <Route path="minecraft" element={<MCBase />}>
-            <Route index element={<MCHome />} />
+            <Route path="" element={<MCHome />} />
             <Route path="plugins" element={<PluginsList />} />
             <Route path="plugins/:pluginID" element={<Plugin />} />
             <Route path="about-me" element={<MCAboutMe />} />

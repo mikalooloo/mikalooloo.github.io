@@ -30,18 +30,22 @@ export default function MCBase(props) {
 
   // get plugins list
   const [plugins, setPlugins] = React.useState([]);
-
   React.useEffect(() => {
-    const promises = [...Array(1).keys()].map(item => {
-      return axiosInstance.get(`/public/plugins/${item}.json`);
-    });
-    const temp = [];
-    Promise.all(promises).then(responses => {
-      responses.map(response => {
-        return temp.push(response.data);
-      })
-    });
-    setPlugins(temp);
+    const getData = async () => {
+      const promises = await [...Array(1).keys()].map(item => {
+        return axiosInstance.get(`/public/plugins/${item}.json`).catch(error => console.log(error));
+      });
+      const temp = [];
+      await Promise.all(promises).then(responses => {
+        responses.map(response => {
+          return temp.push(response.data);
+        })
+      });
+      setPlugins(temp);
+      console.log("updated");
+    }
+
+    getData();
   }, []);
 
   return (

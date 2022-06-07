@@ -1,35 +1,32 @@
-.dark-boxLabel {
-  border: 5px solid white;
+.boxLabel, .light-boxLabel, .dark-boxLabel {
   padding: 2%;
+  min-width: 51%;
+  text-align: center;
   letter-spacing: 5px;
   font-size: larger;
-  min-width: 300px;
+}
+
+.boxValue, .light-boxValue, .dark-boxValue {
+  padding: 2%;
+  min-width: 49%;
   text-align: center;
+  border-left: 0px;
+}
+
+.dark-boxLabel {
+  border: 5px solid white;
 }
 
 .dark-boxValue {
   border: 2px solid white;
-  border-left: 0px;
-  padding: 2%;
-  min-width: 300px;
-  text-align: center;
 }
 
 .light-boxLabel {
   border: 5px solid rgb(0, 0, 0);
-  padding: 2%;
-  letter-spacing: 5px;
-  font-size: larger;
-  min-width: 300px;
-  text-align: center;
 }
 
 .light-boxValue {
   border: 3px solid rgb(0, 0, 0);
-  border-left: 0px;
-  padding: 2%;
-  min-width: 300px;
-  text-align: center;
 }
 
 /*# sourceMappingURL=mc-home.css.map */
