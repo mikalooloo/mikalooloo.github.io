@@ -21,7 +21,7 @@ export default function RLHome(props) {
                         <h1>Mikaela Dean</h1>
                         <h3>software engineer</h3>
                         <h3>full-stack developer</h3>
-                        <h3>game designer</h3>
+                        <h3>game developer</h3>
                     </Parallax>
                 </div>
                 <div className="sun-waves"><li></li>
@@ -123,9 +123,9 @@ export default function RLHome(props) {
                         <p style={{ "marginTop": "5vh" }}>
                             <b>WIP</b><br />
                             BS in Computer Science, Mathematics Minor<br />
-                            Interested in game design/development, full stack web development, digital accessibility<br />
-                            Looking for internships and employment opportunities<br />
-                            Connect with me at mikaeladean10@gmail.com<br /><br />
+                            Interested in full stack web development, game design/development, digital accessibility<br />
+                            Looking for employment opportunities<br />
+                            Connect with me at mikaeladean.graduate@gmail.com<br /><br />
                             Looking for my Minecraft plugins? Click <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
                         </p>
                     </div>
