@@ -122,7 +122,7 @@ export default function RLHome(props) {
                         ABOUT ME
                         <p style={{ "marginTop": "5vh" }}>
                             BS in Computer Science, Mathematics Minor<br />
-                            Interested in full stack web development, game design/development, digital accessibility<br />
+                            Interested in full stack web development, game development, digital accessibility<br />
                             Looking for employment opportunities<br />
                             Connect with me at mikaeladean.graduate@gmail.com<br /><br />
                             Looking for my Minecraft plugins? Click <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
