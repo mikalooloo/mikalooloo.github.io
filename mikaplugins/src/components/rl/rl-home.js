@@ -21,8 +21,8 @@ export default function RLHome(props) {
 
                         >
                             <h1>Mikaela Dean</h1>
-                            <h3><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank">linkedin</Link></h3>
-                            <h3><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank">github</Link></h3>
+                            <h3><b><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank" style={{ "color": "white", "textDecorationThickness": "2px" }}>linkedin</Link></b></h3>
+                            <h3><b><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank" style={{ "color": "white", "textDecorationThickness": "2px" }}>github</Link></b></h3>
                             <h3>software engineer</h3>
                         </Parallax>
                     </div>
@@ -140,26 +140,26 @@ export default function RLHome(props) {
                                 </li>
 
                                 <li>
-                                    <p className="label" style={{ "fontSize": "30%" }}>
-                                        <CurvedText text={"education"} />
-                                    </p>
                                     <p className="value" style={{ "fontSize": "30%" }}>
-                                        <CurvedText text={"BS in Computer Science, Mathematics Minor"} />
+                                        <CurvedText text={"BS in Computer Science, Minor in Mathematics"} />
                                     </p>
-                                </li>
-                                <li>
-                                    <p style={{ "fontSize": "25%" }}>
-                                        <CurvedText text={"interests: game design/development, full stack web development, digital accessibility"} />
-                                    </p>
-                                </li>
-                                <li>
-                                    <p style={{ "fontSize": "30%" }}>
-                                        <CurvedText text={"looking for: internships and employment opportunities"} />
+                                    <p className="value" style={{ "fontSize": "25%" }}>
+                                        <CurvedText text={"interested in full stack web development, game design/development, digital accessibility"} />
                                     </p>
                                 </li>
                                 <li>
                                     <p style={{ "fontSize": "30%" }}>
-                                        <CurvedText text={"connect at: mikaeladean10@gmail.com"} />
+                                        <CurvedText text={"looking for full-time employment opportunities"} />
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"connect with me at mikaeladean.graduate@gmail.com"} />
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "30%" }}>
+                                        check out my Minecraft plugins website <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
                                     </p>
                                 </li>
                             </ul>

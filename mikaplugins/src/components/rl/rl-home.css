@@ -357,6 +357,33 @@
 .rainbow.default ul li:nth-child(5):hover {
   color: #3323c0;
 }
+.rainbow.default ul li:nth-child(6) {
+  color: rgb(136, 5, 125);
+  width: 500vmin;
+  height: 50vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(6):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 115px solid;
+  border-color: 0 0 var(rgb(136, 5, 125)) var(rgb(136, 5, 125));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(6) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(6):hover {
+  color: #570350;
+}
 .rainbow.lesbian ul {
   display: flex;
   align-items: center;
