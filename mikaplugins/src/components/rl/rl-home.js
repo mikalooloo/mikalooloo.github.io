@@ -48,9 +48,16 @@ export default function RLHome(props) {
                         translateX={[83, 28]}
                         translateY={[-249, -100]}
                     >
+<<<<<<< HEAD
                         <div className="shadow-top" style={{ "marginLeft": "3vh", "scale": "0.98" }}>
 
                         </div>
+=======
+                        <h1>Mikaela Dean</h1>
+                        <h3><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank">linkedin</Link></h3>
+                        <h3><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank">github</Link></h3>
+                        <h3>software engineer</h3>
+>>>>>>> 99c8acbe4b1736d729cae3e2646b2ba9a2483fc6
                     </Parallax>
 
                     <Parallax
@@ -126,6 +133,16 @@ export default function RLHome(props) {
 
                     <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh" }}>
                         ABOUT ME
+<<<<<<< HEAD
+=======
+                        <p style={{ "marginTop": "5vh" }}>
+                            BS in Computer Science, Mathematics Minor<br />
+                            Interested in full stack web development, game development, digital accessibility<br />
+                            Looking for employment opportunities<br />
+                            Connect with me at mikaeladean.graduate@gmail.com<br /><br />
+                            Looking for my Minecraft plugins? Click <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
+                        </p>
+>>>>>>> 99c8acbe4b1736d729cae3e2646b2ba9a2483fc6
                     </div>
 
                     {/* RAINBOW: ABOUT ME */}
