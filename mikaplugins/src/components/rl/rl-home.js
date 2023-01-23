@@ -125,7 +125,7 @@ export default function RLHome(props) {
 
                     {/* CENTER TEXT BOX: ABOUT ME */}
 
-                    <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh" }}>
+                    <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh", "paddingRight": "1vh" }}>
                         ABOUT ME
                     </div>
 

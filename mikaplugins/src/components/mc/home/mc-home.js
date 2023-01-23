@@ -71,7 +71,7 @@ export default function MCHome(props) {
           CURRENT PROJECT
         </div>
         <div className={(darkMode ? "dark-" : "light-") + "boxValue"}>
-          finishing up this website :{`)`}
+          finishing up my last semester and applying to jobs :{`)`}
         </div>
       </Stack>
 
