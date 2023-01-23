@@ -140,10 +140,12 @@ export default function RLHome(props) {
                                 </li>
 
                                 <li>
-                                    <p className="value" style={{ "fontSize": "30%" }}>
+                                    <p style={{ "fontSize": "30%" }}>
                                         <CurvedText text={"BS in Computer Science, Minor in Mathematics"} />
                                     </p>
-                                    <p className="value" style={{ "fontSize": "25%" }}>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "25%" }}>
                                         <CurvedText text={"interested in full stack web development, game design/development, digital accessibility"} />
                                     </p>
                                 </li>
