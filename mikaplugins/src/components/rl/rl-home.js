@@ -1,5 +1,6 @@
 import "./rl-home.css";
 import React from "react";
+import CurvedText from "./curved-text";
 import { Parallax } from "react-scroll-parallax";
 import { Link } from "react-router-dom";
 // bootstrap
@@ -8,129 +9,164 @@ import Stack from "react-bootstrap/Stack";
 export default function RLHome(props) {
 
     return (
-        <div className="sky">
-            <Stack>
+        <div>
+            <div className="sky">
+                <Stack>
 
-                {/* SUN */}
+                    {/* SUN */}
 
-                <div className="sun">
+                    <div className="sun">
+                        <Parallax
+                            translateY={[-50, 50]}
+
+                        >
+                            <h1>Mikaela Dean</h1>
+                            <h3>software engineer</h3>
+                            <h3>full-stack developer</h3>
+                            <h3>game designer</h3>
+                        </Parallax>
+                    </div>
+                    <div className="sun-waves">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li></div>
+
+                    {/* TOP-RIGHT CLOUD */}
+
                     <Parallax
-                        speed={-15}
-
+                        translateX={[83, 28]}
+                        translateY={[-249, -100]}
                     >
-                        <h1>Mikaela Dean</h1>
-                        <h3>software engineer</h3>
-                        <h3>full-stack developer</h3>
-                        <h3>game designer</h3>
+                        <div className="shadow-top" style={{ "marginLeft": "3vh", "scale": "0.98" }}>
+
+                        </div>
                     </Parallax>
-                </div>
-                <div className="sun-waves"><li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li></div>
 
-                {/* TOP-RIGHT CLOUD */}
+                    <Parallax
+                        translateX={[80, 20]}
+                        translateY={[-160, -80]}
+                    >
+                        <div className="cloud">
 
-                <Parallax
-                    translateX={[83, 28]}
-                    translateY={[-249, -100]}
-                >
-                    <div className="shadow-top" style={{ "marginLeft": "3vh", "scale": "0.98" }}>
+                        </div>
 
-                    </div>
-                </Parallax>
+                    </Parallax>
 
-                <Parallax
-                    translateX={[80, 20]}
-                    translateY={[-160, -80]}
-                >
-                    <div className="cloud">
+                    {/* FIRST TEXT BOX: 4 QUALITIES */}
 
+                    <div className="textBox-right">
+                        passionate<br />skillful<br />driven<br />creative
                     </div>
 
-                </Parallax>
+                    {/* LEFT CLOUD */}
 
-                {/* FIRST TEXT BOX: 4 QUALITIES */}
+                    <Parallax
+                        translateX={[2, 17, "easeIn"]} // '-20vw', '17vw'
+                        translateY={[-275, 15, "easeInOut"]} // '-600vh', '4vh'
+                    >
+                        <div className="shadow">
 
-                <div className="textBox-right">
-                    passionate<br />skillful<br />driven<br />creative
-                </div>
+                        </div>
+                    </Parallax>
 
-                {/* LEFT CLOUD */}
+                    <Parallax
+                        translateX={[5, 20, "easeIn"]}
+                        translateY={[-180, -45, "easeInOut"]}
+                    >
+                        <div className="cloud">
 
-                <Parallax
-                    translateX={[2, 17, "easeIn"]}
-                    translateY={[-275, 15, "easeInOut"]} // -215, 125
-                >
-                    <div className="shadow">
+                        </div>
 
+                    </Parallax>
+
+                    {/* SECOND TEXT BOX: 4 MORE QUALITIES */}
+
+                    <div className="textBox-left">
+                        resourceful<br />meticulous<br />positive<br />empathetic
                     </div>
-                </Parallax>
 
-                <Parallax
-                    translateX={[5, 20, "easeIn"]}
-                    translateY={[-180, -45, "easeInOut"]} // -200, 0
-                >
-                    <div className="cloud">
+                    {/* RIGHT CLOUD */}
 
-                    </div>
+                    <Parallax
+                        translateX={[18, -20]}
+                        translateY={[-160, 100, "easeOut"]}
+                    >
+                        <div className="shadow" style={{ "marginLeft": "100vh" }}>
 
-                </Parallax>
+                        </div></Parallax>
 
-                {/* SECOND TEXT BOX: 4 MORE QUALITIES */}
+                    <Parallax
+                        translateX={[20, -20]}
+                        translateY={[-175, -25, "easeOut"]}
+                    >
+                        <div className="cloud" style={{ "marginLeft": "100vh" }}>
 
-                <div className="textBox-left">
-                    resourceful<br />meticulous<br />positive<br />empathetic
-                </div>
+                        </div></Parallax>
 
-                {/* RIGHT CLOUD */}
+                </Stack>
+            </div>
 
-                <Parallax
-                    translateX={[18, -20]}
-                    translateY={[-160, 100, "easeOut"]}
-                >
-                    <div className="shadow" style={{ "marginLeft": "100vh" }}>
+            {/* SUN SETTING */}
 
-                    </div></Parallax>
+            <div className="sky-sunset">
+                <Stack>
 
-                <Parallax
-                    translateX={[20, -20]}
-                    translateY={[-175, -25, "easeOut"]}
-                >
-                    <div className="cloud" style={{ "marginLeft": "100vh" }}>
-
-                    </div></Parallax>
-
-                {/* SUN SETTING */}
-
-                <div className="sky-sunset">
                     {/* CENTER TEXT BOX: ABOUT ME */}
 
                     <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh" }}>
                         ABOUT ME
-                        <p style={{ "marginTop": "5vh" }}>
-                            <b>WIP</b><br />
-                            BS in Computer Science, Mathematics Minor<br />
-                            Interested in game design/development, full stack web development, digital accessibility<br />
-                            Looking for internships and employment opportunities<br />
-                            Connect with me at mikaeladean10@gmail.com<br /><br />
-                            Looking for my Minecraft plugins? Click <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
-                        </p>
                     </div>
-                </div>
-            </Stack>
+
+                    {/* RAINBOW: ABOUT ME */}
+
+                    <Parallax>
+                        <div className="rainbow off">
+                            <ul>
+                                <li>
+                                    <p style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"Mikaela Dean"} />
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p className="label" style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"education"} />
+                                    </p>
+                                    <p className="value" style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"BS in Computer Science, Mathematics Minor"} />
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "25%" }}>
+                                        <CurvedText text={"interests: game design/development, full stack web development, digital accessibility"} />
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"looking for: internships and employment opportunities"} />
+                                    </p>
+                                </li>
+                                <li>
+                                    <p style={{ "fontSize": "30%" }}>
+                                        <CurvedText text={"connect at: mikaeladean10@gmail.com"} />
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </Parallax>
+                </Stack>
+            </div>
         </div>
     );
 }

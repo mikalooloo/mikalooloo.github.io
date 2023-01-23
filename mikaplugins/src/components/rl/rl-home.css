@@ -1,10 +1,11 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bungee&display=swap");
 .sky {
   background-color: rgb(158, 182, 228);
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .sky-sunset {
@@ -12,42 +13,46 @@
   background: linear-gradient(180deg, rgb(158, 182, 228) 0%, rgb(11, 50, 89) 65%, rgb(0, 0, 36) 100%);
   min-height: 500vh;
   display: flex;
-  overflow: scroll;
+  overflow: hidden;
 }
 
+@media only screen and (hover: none) and (pointer: coarse) {
+  .sky {
+    overflow-x: scroll;
+  }
+}
 .sun, .sun-waves {
   background-color: rgb(241, 224, 125);
-  width: 80vh;
-  height: 80vh;
+  width: 80vmin;
+  height: 80vmin;
   border-radius: 50%;
-  margin: auto;
-  margin-top: 5%;
+  margin: 0 auto;
+  margin-top: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
   z-index: 2;
 }
 
 .sun-waves {
   background-color: rgba(241, 224, 125, 0);
-  margin-top: -80vh;
+  margin-top: -80vmin;
   z-index: 1;
   animation: rotate 200s linear infinite;
 }
 .sun-waves li {
   list-style: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vh;
-  height: 1vh;
+  top: 40vmin;
+  left: 40vmin;
+  transform: translate(-40vmin, -40vmin);
+  width: 80vmin;
+  height: 1vmin;
 }
 .sun-waves li::before {
   content: "⬢";
-  font-size: 365px;
+  font-size: 37vmin;
   color: rgb(241, 224, 125);
 }
 .sun-waves li:nth-child(1) {
@@ -106,10 +111,10 @@
 }
 .cloud {
   background-color: rgb(255, 255, 255);
-  height: 30vh;
-  width: 70vh;
-  border-radius: 50vh;
-  margin-left: 5vh;
+  height: 30vmin;
+  width: 70vmin;
+  border-radius: 50vmin;
+  margin-left: 5vmin;
   position: relative;
   z-index: 0;
 }
@@ -121,27 +126,27 @@
   border-radius: inherit;
 }
 .cloud::before {
-  width: 30vh;
-  height: 30vh;
-  top: -5vh;
-  left: 10vh;
+  width: 30vmin;
+  height: 30vmin;
+  top: -5vmin;
+  left: 10vmin;
 }
 .cloud::after {
-  width: 30vh;
-  height: 30vh;
-  top: -10vh;
-  left: 1vh;
+  width: 30vmin;
+  height: 30vmin;
+  top: -10vmin;
+  left: 1vmin;
 }
 
 .shadow, .shadow-top {
   background-color: rgb(119, 140, 179);
   mix-blend-mode: normal;
-  height: 30vh;
-  width: 70vh;
-  border-radius: 50vh;
+  height: 30vmin;
+  width: 70vmin;
+  border-radius: 50vmin;
   position: relative;
-  margin-top: -14vh;
-  margin-left: 7vh;
+  margin-top: -14vmin;
+  margin-left: 7vmin;
   z-index: 1;
 }
 
@@ -154,25 +159,25 @@
   mix-blend-mode: inherit;
 }
 .shadow-top::before {
-  width: 30vh;
-  height: 30vh;
-  top: -5vh;
-  left: 10vh;
+  width: 30vmin;
+  height: 30vmin;
+  top: -5vmin;
+  left: 10vmin;
 }
 .shadow-top::after {
-  width: 30vh;
-  height: 30vh;
-  top: -10vh;
-  left: 1vh;
+  width: 30vmin;
+  height: 30vmin;
+  top: -10vmin;
+  left: 1vmin;
 }
 
 .textBox, .textBox-left, .textBox-right {
-  width: 100vh;
-  height: 50vh;
+  width: 100vmin;
+  height: 50vmin;
   text-align: center;
   font-family: "Bungee";
   color: rgb(255, 255, 255);
-  font-size: 800%;
+  font-size: 13vmin;
   line-height: 75%;
 }
 .textBox-right {
@@ -181,13 +186,465 @@
 }
 .textBox-left {
   margin-right: auto;
-  margin-left: 4vh;
+  padding-left: 3vw;
   margin-top: -25vh;
 }
 .textBox p, .textBox-right p, .textBox-left p {
   font-family: Arial;
-  font-size: 25%;
+  font-size: 2vw;
   line-height: 125%;
+}
+
+.label {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+.label:hover {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+.value {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+.value:hover {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.rainbow.default ul {
+  display: flex;
+  align-items: center;
+  margin: 53vmin -155vmin;
+}
+.rainbow.default ul li {
+  list-style: none;
+  position: absolute;
+}
+.rainbow.default ul li:nth-child(1) {
+  color: rgb(226, 42, 42);
+  width: 500vmin;
+  height: 175vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(1):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 165px solid;
+  border-color: 0 0 var(rgb(226, 42, 42)) var(rgb(226, 42, 42));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(1) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(1):hover {
+  color: #bf1a1a;
+}
+.rainbow.default ul li:nth-child(2) {
+  color: rgb(235, 106, 46);
+  width: 500vmin;
+  height: 150vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(2):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 155px solid;
+  border-color: 0 0 var(rgb(235, 106, 46)) var(rgb(235, 106, 46));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(2) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(2):hover {
+  color: #d25014;
+}
+.rainbow.default ul li:nth-child(3) {
+  color: rgb(216, 194, 0);
+  width: 500vmin;
+  height: 125vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(3):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 145px solid;
+  border-color: 0 0 var(rgb(216, 194, 0)) var(rgb(216, 194, 0));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(3) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(3):hover {
+  color: #a59400;
+}
+.rainbow.default ul li:nth-child(4) {
+  color: rgb(52, 216, 101);
+  width: 500vmin;
+  height: 100vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(4):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 135px solid;
+  border-color: 0 0 var(rgb(52, 216, 101)) var(rgb(52, 216, 101));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(4) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(4):hover {
+  color: #23b64f;
+}
+.rainbow.default ul li:nth-child(5) {
+  color: rgb(75, 59, 219);
+  width: 500vmin;
+  height: 75vmin;
+  overflow: hidden;
+}
+.rainbow.default ul li:nth-child(5):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 125px solid;
+  border-color: 0 0 var(rgb(75, 59, 219)) var(rgb(75, 59, 219));
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.default ul li:nth-child(5) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.default ul li:nth-child(5):hover {
+  color: #3323c0;
+}
+.rainbow.lesbian ul {
+  display: flex;
+  align-items: center;
+  margin: 53vmin -155vmin;
+}
+.rainbow.lesbian ul li {
+  list-style: none;
+  position: absolute;
+}
+.rainbow.lesbian ul li:nth-child(1) {
+  color: #D62800;
+  width: 500vmin;
+  height: 175vmin;
+  overflow: hidden;
+}
+.rainbow.lesbian ul li:nth-child(1):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 165px solid;
+  border-color: 0 0 var(#D62800) var(#D62800);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.lesbian ul li:nth-child(1) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.lesbian ul li:nth-child(1):hover {
+  color: #a31e00;
+}
+.rainbow.lesbian ul li:nth-child(2) {
+  color: #FF9B56;
+  width: 500vmin;
+  height: 150vmin;
+  overflow: hidden;
+}
+.rainbow.lesbian ul li:nth-child(2):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 155px solid;
+  border-color: 0 0 var(#FF9B56) var(#FF9B56);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.lesbian ul li:nth-child(2) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.lesbian ul li:nth-child(2):hover {
+  color: #ff7d23;
+}
+.rainbow.lesbian ul li:nth-child(3) {
+  color: #FFFFFF;
+  width: 500vmin;
+  height: 125vmin;
+  overflow: hidden;
+}
+.rainbow.lesbian ul li:nth-child(3):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 145px solid;
+  border-color: 0 0 var(#FFFFFF) var(#FFFFFF);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.lesbian ul li:nth-child(3) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+  fill: rgb(66, 66, 66);
+}
+.rainbow.lesbian ul li:nth-child(3):hover {
+  color: #e6e6e6;
+}
+.rainbow.lesbian ul li:nth-child(4) {
+  color: #D462A6;
+  width: 500vmin;
+  height: 100vmin;
+  overflow: hidden;
+}
+.rainbow.lesbian ul li:nth-child(4):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 135px solid;
+  border-color: 0 0 var(#D462A6) var(#D462A6);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.lesbian ul li:nth-child(4) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.lesbian ul li:nth-child(4):hover {
+  color: #c93a8f;
+}
+.rainbow.lesbian ul li:nth-child(5) {
+  color: #A40062;
+  width: 500vmin;
+  height: 75vmin;
+  overflow: hidden;
+}
+.rainbow.lesbian ul li:nth-child(5):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 125px solid;
+  border-color: 0 0 var(#A40062) var(#A40062);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.lesbian ul li:nth-child(5) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.lesbian ul li:nth-child(5):hover {
+  color: #710044;
+}
+.rainbow.off ul {
+  display: flex;
+  align-items: center;
+  margin: 53vmin -155vmin;
+}
+.rainbow.off ul li {
+  list-style: none;
+  position: absolute;
+}
+.rainbow.off ul li:nth-child(1) {
+  color: #f94144;
+  width: 500vmin;
+  height: 175vmin;
+  overflow: hidden;
+}
+.rainbow.off ul li:nth-child(1):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 165px solid;
+  border-color: 0 0 var(#f94144) var(#f94144);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.off ul li:nth-child(1) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.off ul li:nth-child(1):hover {
+  color: #f71013;
+}
+.rainbow.off ul li:nth-child(2) {
+  color: #f8961e;
+  width: 500vmin;
+  height: 150vmin;
+  overflow: hidden;
+}
+.rainbow.off ul li:nth-child(2):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 155px solid;
+  border-color: 0 0 var(#f8961e) var(#f8961e);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.off ul li:nth-child(2) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.off ul li:nth-child(2):hover {
+  color: #dc7c07;
+}
+.rainbow.off ul li:nth-child(3) {
+  color: #f9c74f;
+  width: 500vmin;
+  height: 125vmin;
+  overflow: hidden;
+}
+.rainbow.off ul li:nth-child(3):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 145px solid;
+  border-color: 0 0 var(#f9c74f) var(#f9c74f);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.off ul li:nth-child(3) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.off ul li:nth-child(3):hover {
+  color: #f7b71e;
+}
+.rainbow.off ul li:nth-child(4) {
+  color: #90be6d;
+  width: 500vmin;
+  height: 100vmin;
+  overflow: hidden;
+}
+.rainbow.off ul li:nth-child(4):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 135px solid;
+  border-color: 0 0 var(#90be6d) var(#90be6d);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.off ul li:nth-child(4) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.off ul li:nth-child(4):hover {
+  color: #76ac4c;
+}
+.rainbow.off ul li:nth-child(5) {
+  color: #577590;
+  width: 500vmin;
+  height: 75vmin;
+  overflow: hidden;
+}
+.rainbow.off ul li:nth-child(5):after {
+  content: "";
+  width: 500vmin;
+  height: 500vmin;
+  border: 125px solid;
+  border-color: 0 0 var(#577590) var(#577590);
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.rainbow.off ul li:nth-child(5) p {
+  margin-top: -164vmin;
+  position: relative;
+  z-index: 2;
+  font-family: "Anton";
+  fill: white;
+}
+.rainbow.off ul li:nth-child(5):hover {
+  color: #445b70;
 }
 
 /*# sourceMappingURL=rl-home.css.map */
