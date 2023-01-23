@@ -21,9 +21,10 @@ export default function RLHome(props) {
 
                         >
                             <h1>Mikaela Dean</h1>
-                            <h3><b><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank" style={{ "color": "white", "textDecorationThickness": "2px" }}>linkedin</Link></b></h3>
-                            <h3><b><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank" style={{ "color": "white", "textDecorationThickness": "2px" }}>github</Link></b></h3>
                             <h3>software engineer</h3>
+                            <h3><br />feel free to check out my</h3>
+                            <h3><b><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank" style={{ "color": "black", "textDecorationThickness": "2px" }}>linkedin</Link></b> or <b><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank" style={{ "color": "black", "textDecorationThickness": "2px" }}>github</Link></b></h3>
+                            <h3><b><Link to="/minecraft/" style={{ "color": "black", "textDecorationThickness": "2px", "font-size": "75%" }}>other portfolio website</Link></b></h3>
                         </Parallax>
                     </div>
                     <div className="sun-waves">
@@ -124,7 +125,7 @@ export default function RLHome(props) {
 
                     {/* CENTER TEXT BOX: ABOUT ME */}
 
-                    <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh" }}>
+                    <div className="textBox" style={{ "margin": "0 auto", "marginTop": "10vh", "marginRight": "1vh" }}>
                         ABOUT ME
                     </div>
 
@@ -160,9 +161,7 @@ export default function RLHome(props) {
                                     </p>
                                 </li>
                                 <li>
-                                    <p style={{ "fontSize": "30%" }}>
-                                        check out my Minecraft plugins website <b><Link to="/minecraft/" style={{ "color": "white", "textDecorationThickness": "2px" }}>here</Link></b>
-                                    </p>
+
                                 </li>
                             </ul>
                         </div>
