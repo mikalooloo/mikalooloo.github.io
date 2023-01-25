@@ -1,0 +1,384 @@
+{
+    "questions": [
+        {
+            "type": "multipleChoice",
+            "question": "",
+            "correctAnswer": "",
+            "possibleAnswers": []
+        },
+        {
+            "type": "multipleChoice",
+            "question": "When is our anniversary?",
+            "correctAnswer": "Nov 4",
+            "possibleAnswers": [
+                "Oct 29",
+                "Nov 2",
+                "Nov 4",
+                "Nov 8"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is our number?",
+            "correctAnswer": "4",
+            "possibleAnswers": [
+                "3",
+                "4",
+                "12",
+                "24"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "When is my birthday?",
+            "correctAnswer": "April 12",
+            "possibleAnswers": [
+                "April 1",
+                "April 12",
+                "April 14",
+                "April 24"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "When am I coming to see you next?",
+            "correctAnswer": "March 11",
+            "possibleAnswers": [
+                "March 8",
+                "March 11",
+                "March 15",
+                "March 16"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my favorite color to wear?",
+            "correctAnswer": "Brown",
+            "possibleAnswers": [
+                "Black",
+                "Gray",
+                "Brown",
+                "White"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What are my brothers' names?",
+            "correctAnswer": "Braylon and Jaden",
+            "possibleAnswers": [
+                "Braden and Jadon",
+                "Brayden and Jaiden",
+                "Braylen and Jayden",
+                "Braylon and Jaden"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my favorite food?",
+            "correctAnswer": "Pizza",
+            "possibleAnswers": [
+                "Pizza",
+                "Burritos",
+                "Soup",
+                "French toast"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my favorite bird?",
+            "correctAnswer": "Black-capped chickadee",
+            "possibleAnswers": [
+                "Black-billed magpie",
+                "Anna's hummingbird",
+                "Black-capped chickadee",
+                "Domestic pigeon"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Which one scares me the most?",
+            "correctAnswer": "Deep ocean",
+            "possibleAnswers": [
+                "Heights",
+                "Ants",
+                "Circus clowns",
+                "Deep ocean"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "If I were a Minecraft block, what would I be?",
+            "correctAnswer": "Red sand",
+            "possibleAnswers": [
+                "Red sand",
+                "Red sandstone",
+                "Redstone ore",
+                "Redstone block"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is your warrior name?",
+            "correctAnswer": "Honeyshade",
+            "possibleAnswers": [
+                "Maplecloud",
+                "Honeyshade",
+                "Mapleshade",
+                "Honeycloud"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my warrior name?",
+            "correctAnswer": "Birchsong",
+            "possibleAnswers": [
+                "Birchsong",
+                "Pebblestep",
+                "Birchstep",
+                "Pebblesong"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Who was I on Halloween?",
+            "correctAnswer": "Daphne",
+            "possibleAnswers": [
+                "Daphne",
+                "Velma",
+                "Gideon",
+                "Harrow"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Where did I NOT visit on my road trip last summer?",
+            "correctAnswer": "Detroit",
+            "possibleAnswers": [
+                "Cincinnati",
+                "Chicago",
+                "Detroit",
+                "Helena"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my favorite movie?",
+            "correctAnswer": "Creep",
+            "possibleAnswers": [
+                "Creep",
+                "Creep 2",
+                "Searching",
+                "But I'm a Cheerleader"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is Friend Sr?",
+            "correctAnswer": "A cheetah",
+            "possibleAnswers": [
+                "A giraffe",
+                "A cheetah",
+                "A leopard",
+                "A manatee"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What do I miss the most about you?",
+            "correctAnswer": "Your hugs",
+            "possibleAnswers": [
+                "Your ****",
+                "Your kisses",
+                "Your hugs",
+                "Your smell"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my favorite flower?",
+            "correctAnswer": "Dandelion",
+            "possibleAnswers": [
+                "Daffodil",
+                "Tulip",
+                "Dandelion",
+                "Daisy"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What're our names in It Takes Two?",
+            "correctAnswer": "May and Cody",
+            "possibleAnswers": [
+                "Maya and Cliff",
+                "May and Cliff",
+                "Maya and Cody",
+                "May and Cody"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What am I a little bit after taking a shower?",
+            "correctAnswer": "A damp rat",
+            "possibleAnswers": [
+                "A wet rat",
+                "A damp rat",
+                "A moist mouse",
+                "A drenched rodent"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is your name on Snapchat for me?",
+            "correctAnswer": "lil soup 🥣",
+            "possibleAnswers": [
+                "❤️ Ethan ❤️",
+                "❤️ lil soup ❤️",
+                "Ethan 🥣",
+                "lil soup 🥣"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What age was I kicked out?",
+            "correctAnswer": "16",
+            "possibleAnswers": [
+                "15",
+                "16",
+                "17",
+                "18"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Where is my power button?",
+            "correctAnswer": "Back of neck",
+            "possibleAnswers": [
+                "Forehead",
+                "Back of neck",
+                "Middle of back",
+                "Top of head"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What state am I going to live in after graduation?",
+            "correctAnswer": "GA",
+            "possibleAnswers": [
+                "WA",
+                "OR",
+                "GA",
+                "CA"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "How bad is my memory?",
+            "correctAnswer": "Absolutely awful",
+            "possibleAnswers": [
+                "Not at all bad",
+                "Sometimes forgetful",
+                "Bad enough you'd repeat a question",
+                "Absolutely awful"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "How bad is my memory?",
+            "correctAnswer": "Bad enough you'd repeat a question",
+            "possibleAnswers": [
+                "Not at all bad",
+                "Sometimes forgetful",
+                "Bad enough you'd repeat a question",
+                "Absolutely awful"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Which lyric is from the first song of yours I hyperfixated on?",
+            "correctAnswer": "This ain't monogamy / Y'all gettin' fucked",
+            "possibleAnswers": [
+                "This ain't monogamy / Y'all gettin' fucked",
+                "My left stroke just went viral / Right stroke put lil' baby in a spiral",
+                "Goddamn I got bitches (okay!) / damn I got bitches (okay!)",
+                "This is how I feel / If somebody kill my son that mean somebody's gettin' killed"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Which sport did I NOT play in middle school?",
+            "correctAnswer": "Bowling",
+            "possibleAnswers": [
+                "Soccer",
+                "Basketball",
+                "Bowling",
+                "Cheerleading"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my #1 love language?",
+            "correctAnswer": "Acts of service",
+            "possibleAnswers": [
+                "Physical touch",
+                "Words of affirmation",
+                "Quality time",
+                "Acts of service"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "Who do I need to see?",
+            "correctAnswer": "All of the above",
+            "possibleAnswers": [
+                "A therapist",
+                "A dentist",
+                "A doctor",
+                "All of the above"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "How many sittings does it take for me to finish a movie with you?",
+            "correctAnswer": "Either 1 or 4",
+            "possibleAnswers": [
+                "Only 1",
+                "Anywhere from 1 to 4",
+                "Either 1 or 4",
+                "Always 4 or more"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is my current #1 best day?",
+            "correctAnswer": "Day we went to Seattle",
+            "possibleAnswers": [
+                "Day we started dating",
+                "Day you showed me around Marysville",
+                "Day we went to Seattle",
+                "Day I left"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "What is our current longest call?",
+            "correctAnswer": "~48 hours",
+            "possibleAnswers": [
+                "~24 hours",
+                "~36 hours",
+                "~48 hours",
+                "~60 hours"
+            ]
+        },
+        {
+            "type": "multipleChoice",
+            "question": "How much do I love you?",
+            "correctAnswer": "Too much",
+            "possibleAnswers": [
+                "A little bit",
+                "Somewhat",
+                "A lot",
+                "Too much"
+            ]
+        }
+    ]
+}

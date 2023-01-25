@@ -9,6 +9,9 @@ import reportWebVitals from "./reportWebVitals";
 // components
 import App from "./App";
 import RLHome from "./components/rl/rl-home";
+// Valentine's 2023
+import Quiz from "./components/valentines23/quiz";
+// Minecraft
 import MCBase from "./components/mc/base/mc-base";
 import MCHome from "./components/mc/home/mc-home";
 import PluginsList from "./components/mc/plugins/pg-plugins-list";
@@ -38,6 +41,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<RLHome />} />
+          <Route path="ethan23" element={<Quiz />} />
           <Route path="minecraft" element={<MCBase />}>
             <Route path="" element={<MCHome />} />
             <Route path="plugins" element={<PluginsList />} />
