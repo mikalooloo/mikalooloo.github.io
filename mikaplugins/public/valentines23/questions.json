@@ -2,12 +2,6 @@
     "questions": [
         {
             "type": "multipleChoice",
-            "question": "",
-            "correctAnswer": "",
-            "possibleAnswers": []
-        },
-        {
-            "type": "multipleChoice",
             "question": "When is our anniversary?",
             "correctAnswer": "Nov 4",
             "possibleAnswers": [
