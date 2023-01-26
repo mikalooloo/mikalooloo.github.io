@@ -1,0 +1,23 @@
+.default {
+    background-color: #9c1cb6;
+    border: #9c1cb6;
+}
+
+.default:active,
+.default:active:focus,
+.default:focus {
+    background-color: #bb58cf;
+    border: #bb58cf;
+    box-shadow: 0 0 5px 1px #bb58cf;
+}
+
+.default:hover,
+.default:hover:active:focus {
+    background-color: #bb58cf;
+    border: #bb58cf;
+}
+
+.default:disabled {
+    background-color: #d298dd;
+    border: #d298dd;
+}

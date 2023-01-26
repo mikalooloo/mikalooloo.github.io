@@ -1,35 +1,51 @@
+import "./quiz.css";
 import React from "react";
-import { Button, Stack, Row, Col } from "react-bootstrap";
+import { Button, Stack, Row, Col, Modal } from "react-bootstrap";
 import axiosInstance from "../../apis/axios-instance";
+import { Link } from "react-router-dom";
 
 export default function Quiz() {
+    // what question user is on
     const [userQuestionIndex, setUserQuestionIndex] = React.useState(-1);
+    // how many times the user answered correctly on the first try
     const [points, setPoints] = React.useState(0);
+    // list of questions, possible answers, and correct answer
     const [questions, setQuestions] = React.useState([]);
+    // list of how many times user guessed each possible answer for each question
     const [guesses, setGuesses] = React.useState([]);
+    // whether or not to show the "hooray you finished" modal
+    const [show, setShow] = React.useState(false);
 
     // get questions list
     React.useEffect(() => {
         axiosInstance.get(`/public/valentines23/questions.json`)
             .then(response => {
-                console.log(response.data.questions);
                 setQuestions(response.data.questions);
             })
             .catch(error => console.log(error));
     }, []);
 
+    // check if user is done with all questions
+    React.useEffect(() => {
+        if (userQuestionIndex === questions.length && questions.length !== 0) {
+            setShow(true);
+        }
+    }, [userQuestionIndex, questions.length]);
+
+    // user has clicked an answer button
     function CheckAnswer(selectedAnswer, selectedAnswerIndex) {
         // update guesses
         let firstGuess = false;
         let updatedGuesses = [...guesses];
+        // if this is the first time we're guessing for a question
         if (updatedGuesses.length < userQuestionIndex + 1) {
             updatedGuesses.push([0, 0, 0, 0]);
             firstGuess = true;
         }
-        else if (updatedGuesses[userQuestionIndex].every((x) => x === 0)) firstGuess = true;
         updatedGuesses[userQuestionIndex][selectedAnswerIndex]++;
         setGuesses(updatedGuesses);
 
+        // if correct answer, move onto next question and add a point if it was their first guess
         if (questions[userQuestionIndex].correctAnswer === selectedAnswer) {
             setUserQuestionIndex(userQuestionIndex + 1);
             if (firstGuess) setPoints(points + 1);
@@ -37,14 +53,14 @@ export default function Quiz() {
     }
 
     return (
-        <div>
-            <h1>to ethan</h1>
+        <div style={{ "fontFamily": "Anton", "textAlign": "center" }} >
+            <h1 style={{ "marginTop": "1%" }}>to ethan</h1>
             <h3>if you can answer all questions from this quiz correctly, you get a prize</h3>
-            <h3>Points: {points}</h3>
+            <h3 style={{ "margin": "2%" }}>Points: {points}</h3>
             {userQuestionIndex === -1 ?
-                <Button onClick={() => setUserQuestionIndex(0)}>Start</Button>
+                <Button className="default" style={{ "fontSize": "150%" }} onClick={() => setUserQuestionIndex(0)}>Start</Button>
                 :
-                <Stack gap={3}>
+                <Stack gap={5}>
                     {questions.map((question, questionIndex) => {
                         return (questionIndex <= userQuestionIndex) ? (<div key={questionIndex}>
                             <h1>{question.question}</h1>
@@ -52,7 +68,7 @@ export default function Quiz() {
                                 {question.possibleAnswers.map((answer, answerIndex) => {
                                     return (
                                         <Col key={answerIndex}>
-                                            <Button disabled={userQuestionIndex !== questionIndex} onClick={(e) => CheckAnswer(e.target.outerText, answerIndex)}>{answer}</Button>
+                                            <Button className="default" style={{ "fontSize": "150%" }} disabled={userQuestionIndex !== questionIndex} onClick={(e) => CheckAnswer(e.target.outerText, answerIndex)}>{answer}</Button>
                                         </Col>);
                                 })}
                             </Row>
@@ -68,6 +84,16 @@ export default function Quiz() {
                         </div>) : <div key={questionIndex} />;
                     })}
                 </Stack>}
+            <Modal show={show} onHide={() => setShow(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Hooray, you've finished!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>You correctly answered {points} questions out of {questions.length}, landing you a total score of {(points / questions.length * 100).toPrecision(3)}%.<br />
+                    Your prize can be found via clicking this <Link to={{ "pathname": "https://www.hangmanwords.com/play/custom?g=YmUlMjBteSUyMHZhbGVudGluZSUzRg==" }} target="_blank">link</Link>.</Modal.Body>
+                <Modal.Footer>
+                    <Button className="default" onClick={() => setShow(false)}>Close</Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 }
