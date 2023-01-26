@@ -2,7 +2,6 @@ import "./quiz.css";
 import React from "react";
 import { Button, Stack, Row, Col, Modal } from "react-bootstrap";
 import axiosInstance from "../../apis/axios-instance";
-import { Link } from "react-router-dom";
 
 export default function Quiz() {
     // what question user is on
@@ -60,7 +59,7 @@ export default function Quiz() {
             {userQuestionIndex === -1 ?
                 <Button className="default" style={{ "fontSize": "150%" }} onClick={() => setUserQuestionIndex(0)}>Start</Button>
                 :
-                <Stack gap={5}>
+                <Stack gap={5} style={{ "marginBottom": "10%" }}>
                     {questions.map((question, questionIndex) => {
                         return (questionIndex <= userQuestionIndex) ? (<div key={questionIndex}>
                             <h1>{question.question}</h1>
@@ -89,7 +88,7 @@ export default function Quiz() {
                     <Modal.Title>Hooray, you've finished!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>You correctly answered {points} questions out of {questions.length}, landing you a total score of {(points / questions.length * 100).toPrecision(3)}%.<br />
-                    Your prize can be found via clicking this <Link to={{ "pathname": "https://www.hangmanwords.com/play/custom?g=YmUlMjBteSUyMHZhbGVudGluZSUzRg==" }} target="_blank">link</Link>.</Modal.Body>
+                    Your prize can be found via clicking this <b><a href="https://www.hangmanwords.com/play/custom?g=YmUlMjBteSUyMHZhbGVudGluZSUzRg==" target="_blank" rel="noreferrer" style={{ "color": "black", "textDecorationThickness": "2px" }}>link</a></b>.</Modal.Body>
                 <Modal.Footer>
                     <Button className="default" onClick={() => setShow(false)}>Close</Button>
                 </Modal.Footer>

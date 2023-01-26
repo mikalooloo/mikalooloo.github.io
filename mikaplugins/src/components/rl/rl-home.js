@@ -23,7 +23,7 @@ export default function RLHome(props) {
                             <h1>Mikaela Dean</h1>
                             <h3>software engineer</h3>
                             <h3><br />feel free to check out my</h3>
-                            <h3><b><Link to={{ pathname: "https://www.linkedin.com/in/mikaela-dean/" }} target="_blank" style={{ "color": "black", "textDecorationThickness": "2px" }}>linkedin</Link></b> or <b><Link to={{ pathname: "https://github.com/mikalooloo" }} target="_blank" style={{ "color": "black", "textDecorationThickness": "2px" }}>github</Link></b></h3>
+                            <h3><b><a href="https://www.linkedin.com/in/mikaela-dean/" target="_blank" rel="noreferrer" style={{ "color": "black", "textDecorationThickness": "2px" }}>linkedin</a></b> or <b><a href="https://github.com/mikalooloo" target="_blank" rel="noreferrer" style={{ "color": "black", "textDecorationThickness": "2px" }}>github</a></b></h3>
                             <h3><b><Link to="/minecraft/" style={{ "color": "black", "textDecorationThickness": "2px", "font-size": "75%" }}>other portfolio website</Link></b></h3>
                         </Parallax>
                     </div>
