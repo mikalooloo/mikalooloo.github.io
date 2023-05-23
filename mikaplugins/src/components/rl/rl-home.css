@@ -2,15 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Bungee&display=swap");
 .sky {
   background-color: rgb(158, 182, 228);
-  min-height: 100vh;
-  max-width: 100vw;
   display: flex;
   overflow: hidden;
+  justify-content: center;
+  min-width: 98vw;
 }
 
 .sky-sunset {
   background: rgb(158, 182, 228);
   background: linear-gradient(180deg, rgb(158, 182, 228) 0%, rgb(11, 50, 89) 65%, rgb(0, 0, 36) 100%);
+  min-width: 100vw;
   min-height: 500vh;
   display: flex;
   overflow: hidden;
@@ -172,22 +173,21 @@
 }
 
 .textBox, .textBox-left, .textBox-right {
-  width: 100vmin;
-  height: 50vmin;
   text-align: center;
   font-family: "Bungee";
   color: rgb(255, 255, 255);
   font-size: 13vmin;
   line-height: 75%;
+  position: relative;
+  z-index: 2;
 }
 .textBox-right {
-  margin-left: auto;
-  margin-top: -25vh;
-}
+  margin-top: 25vh;
+} 
 .textBox-left {
   margin-right: auto;
   padding-left: 3vw;
-  margin-top: -25vh;
+  margin-top: 25vh;
 }
 .textBox p, .textBox-right p, .textBox-left p {
   font-family: Arial;
@@ -212,6 +212,52 @@
   opacity: 1;
   transition-duration: 0.3s;
 }
+
+.rainbow.pastel list-group {
+  text-align: center;
+  font-family: "Anton";
+  color: rgb(255, 255, 255);
+  font-size: 200%;
+}
+.rainbow.pastel ul li {
+  list-style: none;
+}
+
+.rainbow.pastel ul li:nth-child(1) {
+  background-color: #f94144;
+}
+.rainbow.pastel ul li:nth-child(1):hover {
+  background-color: #f71013;
+}
+
+.rainbow.pastel ul li:nth-child(2) {
+  background-color: #f8961e;
+}
+.rainbow.pastel ul li:nth-child(2):hover {
+  background-color: #dc7c07;
+}
+
+.rainbow.pastel ul li:nth-child(3) {
+  background-color: #f9c74f;
+}
+.rainbow.pastel ul li:nth-child(3):hover {
+  background-color: #f7b71e;
+}
+
+.rainbow.pastel ul li:nth-child(4) {
+  background-color: #90be6d;
+}
+.rainbow.pastel ul li:nth-child(4):hover {
+  background-color: #76ac4c;
+}
+
+.rainbow.pastel ul li:nth-child(5) {
+  background-color: #577590;
+}
+.rainbow.pastel ul li:nth-child(5):hover {
+  background-color: #445b70;
+}
+
 
 .rainbow.default ul {
   display: flex;
@@ -532,7 +578,6 @@
 .rainbow.off ul {
   display: flex;
   align-items: center;
-  margin: 53vmin -155vmin;
 }
 .rainbow.off ul li {
   list-style: none;
@@ -673,5 +718,3 @@
 .rainbow.off ul li:nth-child(5):hover {
   color: #445b70;
 }
-
-/*# sourceMappingURL=rl-home.css.map */
