@@ -53,8 +53,8 @@ export default function MCAboutMe() {
 
       <Row>
         <Col className={darkMode ? "dark-linkText" : "light-linkText"} style={{ "paddingTop": "3%" }}>
-          Hi! My name is Mikaela and I am a senior working towards a Bachelor of Science in Computer Science with a Mathematics minor at
-          Washington State University. I'm currently 21 years old and I love to code! So, in my downtime, I decided to make a Minecraft plugin for the first
+          Hi! My name is Mikaela and I have recently graduated with a Bachelor of Science in Computer Science and a Minor in Mathematics at
+          Washington State University. I'm currently 22 years old and I love to code! So, in my downtime, I decided to make a Minecraft plugin for the first
           time and see how it turns out. After making <Link to="/minecraft/plugins/0">Mika's Directional</Link> I decided to try my hand out
           at making my own website too. I have a lot of plans, so I'm hopeful that I'll get the time to do them all!
         </Col>

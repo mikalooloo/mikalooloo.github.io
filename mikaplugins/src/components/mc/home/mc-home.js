@@ -39,7 +39,7 @@ export default function MCHome(props) {
     <Container className={darkMode ? "dark-linkText" : "light-linkText"}>
       <Stack gap={1} className="col-md-6 mx-auto" direction="horizontal" style={{ "paddingTop": "4%", "paddingBottom": "4%" }}>
         <h1 style={{ "letterSpacing": "10px", "paddingBottom": "3%" }}>WELCOME!</h1>
-        <p style={{ "textAlign": "center" }}>I am a senior CS student making Minecraft plugins for fun and for free!</p>
+        <p style={{ "textAlign": "center" }}>I am a recently graduated CS student making Minecraft plugins for fun and for free!</p>
       </Stack>
 
       <Stack className="col-md-6 mx-auto" direction="horizontal" style={{ "paddingBottom": "2%" }}>
@@ -71,7 +71,7 @@ export default function MCHome(props) {
           CURRENT PROJECT
         </div>
         <div className={(darkMode ? "dark-" : "light-") + "boxValue"}>
-          finishing up my last semester and applying to jobs :{`)`}
+          applying to jobs :{`)`}
         </div>
       </Stack>
 
