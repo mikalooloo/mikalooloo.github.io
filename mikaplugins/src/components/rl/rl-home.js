@@ -157,7 +157,7 @@ export default function RLHome(props) {
                                 Mikaela Dean
                             </div>
                             <div>
-                                Bachelor of Science in Computer Science
+                                Bachelor of Science in Computer Science,
                                 Minor in Mathematics
                             </div>
                             <div>
