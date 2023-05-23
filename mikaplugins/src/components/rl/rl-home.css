@@ -5,7 +5,7 @@
   display: flex;
   overflow: hidden;
   justify-content: center;
-  min-width: 98vw;
+  min-width: 100%;
 }
 
 .sky-sunset {
@@ -213,48 +213,50 @@
   transition-duration: 0.3s;
 }
 
-.rainbow.pastel list-group {
+.rainbow.pastel {
   text-align: center;
   font-family: "Anton";
   color: rgb(255, 255, 255);
   font-size: 200%;
 }
-.rainbow.pastel ul li {
-  list-style: none;
+.rainbow.pastel div {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 40px;
 }
 
-.rainbow.pastel ul li:nth-child(1) {
+.rainbow.pastel div:nth-child(1) {
   background-color: #f94144;
 }
-.rainbow.pastel ul li:nth-child(1):hover {
+.rainbow.pastel div:nth-child(1):hover {
   background-color: #f71013;
 }
 
-.rainbow.pastel ul li:nth-child(2) {
+.rainbow.pastel div:nth-child(2) {
   background-color: #f8961e;
 }
-.rainbow.pastel ul li:nth-child(2):hover {
+.rainbow.pastel div:nth-child(2):hover {
   background-color: #dc7c07;
 }
 
-.rainbow.pastel ul li:nth-child(3) {
+.rainbow.pastel div:nth-child(3) {
   background-color: #f9c74f;
 }
-.rainbow.pastel ul li:nth-child(3):hover {
+.rainbow.pastel div:nth-child(3):hover {
   background-color: #f7b71e;
 }
 
-.rainbow.pastel ul li:nth-child(4) {
+.rainbow.pastel div:nth-child(4) {
   background-color: #90be6d;
 }
-.rainbow.pastel ul li:nth-child(4):hover {
+.rainbow.pastel div:nth-child(4):hover {
   background-color: #76ac4c;
 }
 
-.rainbow.pastel ul li:nth-child(5) {
+.rainbow.pastel div:nth-child(5) {
   background-color: #577590;
 }
-.rainbow.pastel ul li:nth-child(5):hover {
+.rainbow.pastel div:nth-child(5):hover {
   background-color: #445b70;
 }
 

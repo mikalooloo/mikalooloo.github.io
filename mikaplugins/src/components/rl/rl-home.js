@@ -142,32 +142,33 @@ export default function RLHome(props) {
 
                 {/* CENTER TEXT BOX: ABOUT ME */}
                 <Stack>
-                    <div className="textBox mx-auto" style={{ }}>
+                    <div className="textBox mx-auto">
                         ABOUT ME
-                    </div>
-
+                        </div>
+                        
                     {/* RAINBOW: ABOUT ME */}
 
-                    <Parallax>
-                        <div className="rainbow pastel">
-                            <ul>
-                                <li>
-                                    Mikaela Dean
-                                </li>
-                                <li>
-                                    Bachelor of Science in Computer Science
-                                    Minor in Mathematics
-                                </li>
-                                <li>
-                                    interested in full stack development, game design/development, digital accessibility
-                                </li>
-                                <li>
-                                    looking for full-time employment opportunities
-                                </li>
-                                <li>
-                                    connect with me at mikaeladean.graduate@gmail.com
-                                </li>
-                            </ul>
+                    <Parallax
+                            translateX={[-50,50]}
+                    >
+                        <div className="rainbow pastel" style={{"marginTop":"12vh"}}>
+                                <div>
+                                    
+                                Mikaela Dean
+                            </div>
+                            <div>
+                                Bachelor of Science in Computer Science
+                                Minor in Mathematics
+                            </div>
+                            <div>
+                                interested in full stack development, game design/development, digital accessibility
+                            </div>
+                            <div>
+                                looking for full-time employment opportunities
+                            </div>
+                            <div>
+                                connect with me at mikaeladean.graduate@gmail.com
+                            </div>
                         </div>
                     </Parallax>
                 </Stack>
