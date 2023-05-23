@@ -138,7 +138,7 @@ export default function RLHome(props) {
                 </Col>
             </Row>
                 
-            <div className="sky-sunset" style={{ "marginTop": "-85vh" }}>
+            <div className="sky-sunset" style={{ "marginTop": "-40%" }}>
 
                 {/* CENTER TEXT BOX: ABOUT ME */}
                 <Stack>
