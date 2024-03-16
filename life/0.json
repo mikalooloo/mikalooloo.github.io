@@ -1,0 +1,28 @@
+{
+  "id": 0,
+  "title": "The Game of Life",
+  "year": "1960 - 2021 remake",
+  "base": {
+
+  },
+  "pieces": {
+    "vehicle": {
+      "types": [
+        "cars"
+      ],
+      "colors": [
+        "red",
+        "pink",
+        "orange",
+        "yellow",
+        "green",
+        "light blue",
+        "dark blue",
+        "white"
+      ]
+    }
+  },
+  "images": {
+    "front": "life/images/0-front.png"
+  }
+}
